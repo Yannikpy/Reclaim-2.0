@@ -98,7 +98,7 @@ function onLocationFound(e) {
 };
 
 function onLocationError(e){
-	alert("hier wird dir erklärt wie es geht")
+	console.log("hier wird dir erklärt wie es geht")
 }
 map.on('locationfound', onLocationFound);
 map.on('locationerror', onLocationError);
@@ -368,7 +368,7 @@ map.on('popupopen', function(e) {
 });
 
 map.on('popupclose', function(e) {
-		if (e.popup._source.type == "point") {
+		if (e.popup._source.type == "art") {
 			e.popup._source.setIcon(pointIcon);
 			audio.pause();
 			audioOpen = false; 
