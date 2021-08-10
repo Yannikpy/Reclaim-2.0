@@ -1,6 +1,6 @@
 document.getElementById('cookiebutton').addEventListener('click', function(){document.getElementById('cookiehinweis').style.display = 'none'})
 
-var n = null;
+var n = 6;
 
 // check if artwork name is given in 
 const queryString = location.search;
@@ -214,7 +214,7 @@ function createContent(n, artist, title, text, info, insta, website) {
 	else {
 	content = content + "<div id='buttonBox'>" + buttons + "</div>" 
 	content = content + logos + buttonsNext
-	content = "<div id='myContent'>" + content + "</div>"
+	content = "<div class='myContent'>" + content + "</div>"
 	}
 	return content
 	}
@@ -233,26 +233,28 @@ function initMarkers(lang) {
 	map.closePopup();
 	markers.clearLayers();
 	route = [];
-	var i = 1;
+	var i = 0;
 	for (loc of locations) {
-		if (loc.adress == "") {
+		if (loc.adress == "") { // these are stations
 			marker = eval(loc.id)
-			
 			var infotext = "<div class='myContent'> " + buttons + " <p4>" + loc.title + "<br> <br>" + loc.text_en + "</p4>" + buttonsNext + "</div>"
-		
 			marker.bindPopup(infotext, popupOptions);
 			marker.type = "station"
 			route.push(marker);
 			
 		}
-		else {
+		else { // these are points
 			//var Popup = createContent(i, loc.artist, loc.title, loc.text_en, false, loc.insta, loc.website)
-			var marker = L.marker(loc.location, markerOptions).addTo(map).bindPopup(loc.adress + "<br> <br>" + loc.id, popupOptions);
+			var marker = L.marker(loc.location, markerOptions).addTo(map)//.bindPopup(loc.adress + "<br> <br>" + loc.id, popupOptions);
+			marker.id = i;
 			marker.type = "art"
-			//markers.addLayer(marker)
-			//route.push(marker);
+			marker.on('click', openmyPopup)
+			markers.addLayer(marker)
+			route.push(marker);
 		}
-
+		slide = "<div class='swiper-slide'>" + loc.adress + "<br> <br>" + loc.id + "</div>"
+		swiper.addSlide(i, slide)
+		i++;
 	}
 
 	if (n !== null){
@@ -261,9 +263,14 @@ function initMarkers(lang) {
 }
 
 
+
+
+
+
+
 // functions for clicking through route
 function next() {
-if (n < 39) {
+if (n < 49) {
 		n += 1;
 	} 	else {
 		n = 0;
@@ -300,17 +307,28 @@ function playGuide(){
 }
 
 // Main function, centers points, and adds eventlisteners for Popupbutton
+function openmyPopup(e){
+		gtag('event', 'Imageview' );
+		
+		//center view over target
+		var xy = this.getLatLng();
+		map.setView(L.latLng(xy.lat - 0.0015, xy.lng), 17, {animate:true, duration:0.6});
+		route[n].setIcon(pointIcon)
+		
+		//set big pointIcon
+		if (e.sourceTarget.type == "art"){	
+			e.sourceTarget.setIcon(pointIconL);
+			n = e.sourceTarget.id;
+			console.log(route[32].id)
+		}
+		document.getElementById('swiper-container').style.visibility = "visible";
+		swiper.slideTo(n, 0, false)
+}
+
+
 map.on('popupopen', function(e) {
 	if (e.popup._source) {
 		var id = e.popup._source.id;
-		gtag('event', 'Imageview' );
-
-		var xy = e.popup._source.getLatLng();
-		map.setView(L.latLng(xy.lat - 0.0015, xy.lng), 17, {animate:true, duration:0.6});
-		if (e.popup._source.type == "art"){
-			e.popup._source.setIcon(pointIconL);
-			n = e.popup._source.id - 1;
-		}
 		
 		var buttons = document.querySelectorAll(".myprevbutton"); 
 		for (const button of buttons) {
@@ -340,14 +358,7 @@ map.on('popupopen', function(e) {
 
 	}
 	else {
-		var button = document.getElementById("openBtn")
-		if (button) {
-			button.addEventListener('click', function () {
-				open();
-			})
-			}
-		
-			
+
 		var buttons = document.querySelectorAll(".myprevbutton"); 
 		for (const button of buttons) {
 			button.addEventListener('click', prev)
@@ -411,4 +422,31 @@ if (!isMobile) {
 }
 
 
-initMarkers("de")
+// init swiper
+const swiper = new Swiper('.swiper-container', {
+	// Optional parameters
+	direction: 'horizontal',
+	loop: true,  
+  });
+
+swiper.on('slideChange', function () {
+		//make previus point smaller and set bigIcon for new point
+		if (document.getElementById('swiper-container').style.visibility == "visible") {
+			if (route[n].type == "art") {
+				route[n].setIcon(pointIcon)
+			}
+			n = swiper.realIndex;
+			if (route[n].type == "art"){	
+				route[n].setIcon(pointIconL);
+			}
+	
+			//center view over target
+			marker = route[n]
+			let xy = marker.getLatLng();
+			map.setView(L.latLng(xy.lat - 0.0015, xy.lng), 17, {animate:true, duration:0.6});
+		}
+  });
+
+  initMarkers("de")
+
+  
