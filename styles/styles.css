@@ -160,7 +160,7 @@ z-index: 200 !important;
     justify-content: space-between;
     margin-bottom: 15px;
     margin-top: 15px;
-    z-index: 1500;
+    
     
 }
 
@@ -323,9 +323,15 @@ font-size: 14px;
     bottom: 0;
     border-top: 5px solid black;
     background-color: #f3953f;
-    z-index: 1000;
+    z-index: 1500;
     visibility: hidden;
   }
+
+.my-stuff {
+    width: 100%;
+    height: 500px;
+    background-color: #f3953f;
+}
 
 
 @media only screen and (min-width: 600px) {

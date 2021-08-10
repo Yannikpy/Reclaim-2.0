@@ -230,6 +230,7 @@ function initMarkers(lang) {
 			marker.type = "station"
 			route.push(marker);
 			var slide = "<div class='swiper-slide'>" + i + "<br> <br>" + loc.id + "</div>"
+			var slide = "<div class='swiper-slide'> <div class='my-stuff'></div></div>"
 			
 			slides.push(slide)
 			
@@ -248,7 +249,7 @@ function initMarkers(lang) {
 
 			var popup_content = "<div class='myContent'>" + content + "</div>"
 
-			var slide = "<div class='swiper-slide'>" + popup_content + "</div>"
+			var slide = "<div class='swiper-slide'> <div class='my-stuff'></div></div>"
 			slides.push(slide)
 		}
 
