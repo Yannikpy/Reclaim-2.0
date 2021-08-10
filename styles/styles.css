@@ -130,9 +130,8 @@ z-index: 200 !important;
 
 .myContent {
     height: 100%;
-    margin: 15px;
-    margin-top: 30px;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .myContent {
@@ -327,13 +326,6 @@ font-size: 14px;
     visibility: hidden;
   }
 
-.scroll {
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
-    scrollbar-width: none;  /* Firefox */
-}
-.scroll::-webkit-scrollbar { 
-    display: none;  /* Safari and Chrome */
-}
 
 @media only screen and (min-width: 600px) {
 
