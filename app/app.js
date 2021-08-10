@@ -1,6 +1,6 @@
 document.getElementById('cookiebutton').addEventListener('click', function(){document.getElementById('cookiehinweis').style.display = 'none'})
 
-var n = 6;
+var n = 0;
 
 // check if artwork name is given in 
 const queryString = location.search;
@@ -21,7 +21,7 @@ zoomControl: false
 // add tileLayer for blue Color
 const mypane = map.createPane('color');
 L.tileLayer('https://htmlcolors.com/color-image/96cfc1.png',{
-	minZoom: 6,
+	minZoom: 11,
 	maxZoom: 20,
 	pane: 'color',
 }).addTo(map)
@@ -30,7 +30,7 @@ L.tileLayer('https://htmlcolors.com/color-image/96cfc1.png',{
 osm = L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}{r}.{ext}', {
 attribution: 'Map tiles by <a target="_blank" rel="noopener noreferrer" href="http://stamen.com">Stamen Design</a>, <a target="_blank" rel="noopener noreferrer" href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a target="_blank" rel="noopener noreferrer" href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
 subdomains: 'abcd',
-minZoom: 6,
+minZoom: 11,
 maxZoom: 20,
 ext: 'png',
 }).addTo(map)
@@ -48,15 +48,6 @@ infoBtn.addEventListener('click', infoPopup);
 langBtn.addEventListener('click', changeLang);
 
 // draw route and points on map
-
-//global popup options
-const popupOptions =
-			{
-			'autoPan' : false,
-				'pane': 'fixed',
-				'className' : 'popup-fixed',
-				'closeOnClick' : false,
-			}
 
 // init Icons
 var pointIcon = L.icon({
@@ -156,7 +147,7 @@ stationMarkers.addLayer(hb);
 // dont show icons depending on zoom-Level
 
 map.on('zoomend', function() {
-	if (map.getZoom() < 10 ){
+	if (map.getZoom() < 11 ){
 			map.removeLayer(stationMarkers);
 	}
 	else {
@@ -170,19 +161,16 @@ map.on('zoomend', function() {
 function infoPopup() {
 	lang = document.getElementById('langBtn').innerHTML
 	infotext = (lang =="en") ? infotext_de : infotext_en;
-	var popup = L.popup(popupOptions)
-	.setLatLng([50.9385, 6.935])
-	.setContent(infotext)
-	.openOn(map);
+
 }
 
 
 // function to change language
 function changeLang() {
 	lang = document.getElementById('langBtn').innerHTML
-	initMarkers(lang)
-	lang = (lang == "de") ? "eng" : "de";
+	lang = (lang == "de") ? "en" : "de";
 	document.getElementById('langBtn').innerHTML = lang
+	initMarkers(lang)
 		
 }
 
@@ -190,7 +178,7 @@ function changeLang() {
 // function that takes creates html-string from information about artwork
 function createContent(n, artist, title, text, info, insta, website) {
 
-	var content = "<img class='image' src='images/" + n + ".jpg'>	<br> <br> <div id='infoBlock'>  <div class='titleParent'><p> " + n + "</p><div id='titleBlock'><p>" + artist + "<br><i> "+ title + " </i> </p></div></div><br><div class='textblock'> <p>" + text + "</p> </div>" + "</div>"
+	var content = "<img class='image' src='images/" + 2 + ".jpg'>	<br> <br> <div id='infoBlock'>  <div class='titleParent'><p> " + n + "</p><div id='titleBlock'><p>" + artist + "<br><i> "+ title + " </i> </p></div></div><br><div class='textblock'> <p>" + text + "</p> </div>" + "</div>"
 	var buttons = "<input src='symbols/X.svg' class='closeBtn' type='image'></input> <input src='symbols/Audioguide.svg' class='audioBtn' type='image'></input> "
 	
 	if (insta != "—" || website != "—") {
@@ -203,17 +191,17 @@ function createContent(n, artist, title, text, info, insta, website) {
 		}
 		logos = logos + "</div>"
 	}
-	var buttonsNext = " <div class=buttoncontainer> <input src='symbols/Pfeil_links.svg' class='myprevbutton' type='image'></input> <input src= 'symbols/Pfeil_rechts.svg' class='mynextbutton' type='image'></input> </div>";	
+	//var buttonsNext = " <div class=buttoncontainer> <input src='symbols/Pfeil_links.svg' class='myprevbutton' type='image'></input> <input src= 'symbols/Pfeil_rechts.svg' class='mynextbutton' type='image'></input> </div>";	
 	
 	if (info) {
 	content = content + "<div id='buttonBoxPlatform'>" + buttons + "</div>" 
-	content = content + logos + buttonsNext
+	content = content + logos
 	content = "<div id='myContentPlatform'>" + content  + "</div>"
 	content = content + "<div id='platformInfo'><p3>"+ info +"</p3></div>";
 	}
 	else {
 	content = content + "<div id='buttonBox'>" + buttons + "</div>" 
-	content = content + logos + buttonsNext
+	content = content + logos
 	content = "<div class='myContent'>" + content + "</div>"
 	}
 	return content
@@ -233,32 +221,45 @@ function initMarkers(lang) {
 	map.closePopup();
 	markers.clearLayers();
 	route = [];
+	slides = [];
 	var i = 0;
 	for (loc of locations) {
 		if (loc.adress == "") { // these are stations
 			marker = eval(loc.id)
 			var infotext = "<div class='myContent'> " + buttons + " <p4>" + loc.title + "<br> <br>" + loc.text_en + "</p4>" + buttonsNext + "</div>"
-			marker.bindPopup(infotext, popupOptions);
 			marker.type = "station"
 			route.push(marker);
+			slide = "<div class='swiper-slide'>" + i + "<br> <br>" + loc.id + "</div>"
+			
+			slides.push(slide)
 			
 		}
 		else { // these are points
-			//var Popup = createContent(i, loc.artist, loc.title, loc.text_en, false, loc.insta, loc.website)
-			var marker = L.marker(loc.location, markerOptions).addTo(map)//.bindPopup(loc.adress + "<br> <br>" + loc.id, popupOptions);
+			
+			var marker = L.marker(loc.location, markerOptions).addTo(map)
 			marker.id = i;
 			marker.type = "art"
 			marker.on('click', openmyPopup)
 			markers.addLayer(marker)
 			route.push(marker);
+			
+			var popup_content = createContent(i + 1, "Künster:in", "Titel", "Beschreibungstext, der sehr sehr sehr sehrsehr sehr sehr sehrsehr sehr sehr sehrsehr sehr sehr sehrsehr sehr sehr sehrsehr sehr sehr sehr lang ist", false, "insta", "website")
+			slide = "<div class='swiper-slide'>" + popup_content + "</div>"
+			slides.push(slide)
 		}
-		slide = "<div class='swiper-slide'>" + loc.adress + "<br> <br>" + loc.id + "</div>"
-		swiper.addSlide(i, slide)
+
+		
 		i++;
 	}
-
-	if (n !== null){
-		route[n].openPopup();
+	swiper.addSlide(1, slides)
+	//eventlisteners
+	var buttons = document.querySelectorAll(".closeBtn")
+	for (const button of buttons){
+		button.addEventListener('click', closemyPopup)
+	}
+	var buttons = document.querySelectorAll(".audioBtn")
+	for (const button of buttons){
+		button.addEventListener('click', playGuide)
 	}
 }
 
@@ -266,32 +267,8 @@ function initMarkers(lang) {
 
 
 
-
-
-// functions for clicking through route
-function next() {
-if (n < 49) {
-		n += 1;
-	} 	else {
-		n = 0;
-	}	
-	route[n].openPopup();
-};
-
-function prev() {
-if (n > 2) {
-		n -= 1;
-	} 	
-	else {
-		n = 39;
-	}	
-	route[n].openPopup();
-};
-
-
 // audio guide
 var audio = new Audio('audio/1.mp3');
-var audioOpen = false;
 var audioPlaying = false;
 
 function playGuide(){
@@ -300,7 +277,7 @@ function playGuide(){
 		audio.pause()
 		audioPlaying = false;
 		}
-	else if (audioOpen) {
+	else {
 		audio.play();
 		audioPlaying = true;
 	}
@@ -308,106 +285,26 @@ function playGuide(){
 
 // Main function, centers points, and adds eventlisteners for Popupbutton
 function openmyPopup(e){
-		gtag('event', 'Imageview' );
-		
-		//center view over target
-		var xy = this.getLatLng();
-		map.setView(L.latLng(xy.lat - 0.0015, xy.lng), 17, {animate:true, duration:0.6});
-		route[n].setIcon(pointIcon)
-		
-		//set big pointIcon
-		if (e.sourceTarget.type == "art"){	
-			e.sourceTarget.setIcon(pointIconL);
-			n = e.sourceTarget.id;
-			console.log(route[32].id)
-		}
 		document.getElementById('swiper-container').style.visibility = "visible";
-		swiper.slideTo(n, 0, false)
+		//console.log("click: " +  e.sourceTarget.id)
+		swiper.slideTo(e.sourceTarget.id + 1, 0, false)
 }
 
-
-map.on('popupopen', function(e) {
-	if (e.popup._source) {
-		var id = e.popup._source.id;
-		
-		var buttons = document.querySelectorAll(".myprevbutton"); 
-		for (const button of buttons) {
-			button.addEventListener('click', prev)
-		}
-		var buttons = document.querySelectorAll(".mynextbutton"); 
-		for (const button of buttons) {
-			button.addEventListener('click', next)
-		}
-		var buttons = document.querySelectorAll(".closeBtn")
-		for (const button of buttons){
-			button.addEventListener('click', function () {
-				map.closePopup();
-			})
-		}
-
-		var buttons = document.querySelectorAll(".audioBtn")
-		lang = document.getElementById('langBtn').innerHTML
-		audio = new Audio('audio/'+((lang=='en') ? 'german/': 'english/' )+ e.popup._source.id  +'.mp3');
-		audioOpen = true;
-		for (const button of buttons){
-			button.addEventListener('click', function () {
-			playGuide()
-			})
-		}
-		
-
-	}
-	else {
-
-		var buttons = document.querySelectorAll(".myprevbutton"); 
-		for (const button of buttons) {
-			button.addEventListener('click', prev)
-		}
-		var buttons = document.querySelectorAll(".mynextbutton"); 
-		for (const button of buttons) {
-			button.addEventListener('click', next)
-		}
+function closemyPopup(){
+	document.getElementById('swiper-container').style.visibility = "hidden";
 	
+	//center view over target
+	marker = route[n]
+	let xy = marker.getLatLng();
+	map.setView(L.latLng(xy.lat, xy.lng), 17, {animate:true, duration:0.6});
 
-		var buttons = document.querySelectorAll(".closeBtn")
-		for (const button of buttons){
-			button.addEventListener('click', function () {
-				map.closePopup();
-			})
-		}
-	}
-});
-
-map.on('popupclose', function(e) {
-		if (e.popup._source.type == "art") {
-			e.popup._source.setIcon(pointIcon);
-			audio.pause();
-			audioOpen = false; 
-			audioPlaying = false;
-			n=null;
-		}		
-});
-
-
-
-
-
-
-
-
-// init Popup in center of map
-var pane = map.createPane('fixed', document.getElementById('map'));
-var centerPopupOptions =
-	{
-	'autoPan' : false,
-		'pane': 'fixed',
-		'className' : 'popup-fixed-center',
-		'closeOnClick' : false,
-		'maxWidth': 1000,
+	if (route[n].type == "art") {
+		route[n].setIcon(pointIcon)
 	}
 
-
-
+	audio.pause();
+	audioPlaying = false;
+}
 
 
 // detect desktop
@@ -415,10 +312,7 @@ var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 if (!isMobile) {
 	
 	var languagetext = " <p6> Diese Karte ist für Mobiltelefone optimiert. Also schnapp Dir deine Freunde, dein Handy und dein Fahrrad und folge der Reclaim Route von Ehrenfeld über das Belgische Viertel bis hin zum Ebertplatz! <br> <br> This map is optimized for mobile phones. So, all you have got to do is grab your friends, your phone and your bike and follow the Reclaim Route from Ehrenfeld via the Belgian Quarter to Ebertplatz!</p6>"
-	var popup = L.popup(centerPopupOptions)
-	.setLatLng([50.9385, 6.935])
-	.setContent(languagetext)
-	//.openOn(map);
+
 }
 
 
@@ -430,12 +324,15 @@ const swiper = new Swiper('.swiper-container', {
   });
 
 swiper.on('slideChange', function () {
-		//make previus point smaller and set bigIcon for new point
+		//console.log("prev:" + n)
+		
 		if (document.getElementById('swiper-container').style.visibility == "visible") {
+			//make previus point smaller and set bigIcon for new point
 			if (route[n].type == "art") {
 				route[n].setIcon(pointIcon)
 			}
 			n = swiper.realIndex;
+			//console.log("new:" + n)
 			if (route[n].type == "art"){	
 				route[n].setIcon(pointIconL);
 			}
@@ -444,7 +341,16 @@ swiper.on('slideChange', function () {
 			marker = route[n]
 			let xy = marker.getLatLng();
 			map.setView(L.latLng(xy.lat - 0.0015, xy.lng), 17, {animate:true, duration:0.6});
-		}
+
+
+			// audio guide
+			audio.pause();
+			audioPlaying = false;
+			lang = document.getElementById('langBtn').innerHTML
+	
+			audio = new Audio('audio/'+((lang=="de") ? 'english/': 'german/' )+ 3  +'.mp3');
+			
+		}			
   });
 
   initMarkers("de")
