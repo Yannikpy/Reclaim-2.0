@@ -247,9 +247,9 @@ function initMarkers(lang) {
 			//var popup_content = createContent(i + 1, "Künster:in", "Titel", "Beschreibungstext, der sehr sehr sehr sehrsehr sehr sehr sehrsehr sehr sehr sehrsehr sehr sehr sehrsehr sehr sehr sehrsehr sehr sehr sehr lang ist", false, "insta", "website")
 			var content = " <p> Diese Karte ist für Mobiltelefone optimiert. Also schnapp Dir deine Freunde, dein Handy und dein Fahrrad und folge der Reclaim Route von Ehrenfeld über das Belgische Viertel bis hin zum Ebertplatz! <br> <br> This map is optimized for mobile phones. So, all you have got to do is grab your friends, your phone and your bike and follow the Reclaim Route from Ehrenfeld via the Belgian Quarter to Ebertplatz!</p>"
 
-			var popup_content = "<div class='myContent'>" + content + "</div>"
+			var popup_content = "<div class='myContent'>" + content + content + "</div>"
 
-			var slide = "<div class='swiper-slide'> <div class='my-stuff'></div></div>"
+			var slide = "<div class='swiper-slide'> <div class='my-stuff'>"+content + content+"</div></div>"
 			slides.push(slide)
 		}
 
