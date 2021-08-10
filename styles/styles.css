@@ -332,6 +332,7 @@ font-size: 14px;
     height: 500px;
     background-color: #f3953f;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 

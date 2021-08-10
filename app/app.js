@@ -325,6 +325,9 @@ if (!isMobile) {
 const swiper = new Swiper('.swiper-container', {
 	// Optional parameters
 	direction: 'horizontal',
+	scrollbar: {
+		el: ".swiper-scrollbar",
+	  },
 	loop: true,  
   });
 
