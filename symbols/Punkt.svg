@@ -1,1 +1,13 @@
-<svg id="Ebene_1" data-name="Ebene 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 24"><defs><style>.cls-1{fill:#f3953f;}</style></defs><title>Punkt orange</title><g id="Ellipse_25" data-name="Ellipse 25"><circle class="cls-1" cx="12.5" cy="11.9" r="11.5"/><path d="M12.5,23.4A11.5,11.5,0,1,1,24,11.9,11.51,11.51,0,0,1,12.5,23.4Zm0-20A8.5,8.5,0,1,0,21,11.9,8.51,8.51,0,0,0,12.5,3.4Z"/></g></svg>
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 25.4.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Ebene_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 25 24" style="enable-background:new 0 0 25 24;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#ED6EA7;}
+</style>
+<g id="Ellipse_25">
+	<circle class="st0" cx="12.5" cy="11.9" r="11.5"/>
+	<path d="M12.5,23.4C6.1,23.4,1,18.3,1,11.9S6.1,0.4,12.5,0.4S24,5.5,24,11.9C24,18.2,18.8,23.4,12.5,23.4z M12.5,3.4
+		C7.8,3.4,4,7.2,4,11.9s3.8,8.5,8.5,8.5s8.5-3.8,8.5-8.5C21,7.2,17.2,3.4,12.5,3.4z"/>
+</g>
+</svg>
