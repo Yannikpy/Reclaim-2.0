@@ -140,10 +140,6 @@ z-index: 200 !important;
     margin-right: 15px;
 }
 
-.swiper-slide {
-    overflow-y: scroll;
-}
-
 
 .leaflet-fade-anim .leaflet-tile,.leaflet-zoom-anim .leaflet-zoom-animated { will-change:auto !important; }
     
