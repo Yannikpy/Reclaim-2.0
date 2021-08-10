@@ -64,7 +64,7 @@ p3 {
 }
 
 .my_polyline {
-    stroke: #f3943e;
+    stroke: #ED6EA7;
     stroke-width: 3;
     stroke-dasharray: 5, 10;
 }
@@ -161,9 +161,6 @@ border-top: 7px solid black;
     box-sizing: border-box;
 }
 
-#myContent {
-    margin: 15px;
-}
 
 .myContent {
     margin: 15px;
@@ -374,6 +371,28 @@ text-align: left;
 #cookiehinweis {
 line-height: 20px;
 font-size: 14px;
+}
+
+.swiper-container {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 40%;
+    bottom: 0;
+    border-top: 5px solid black;
+    background-color: #f3953f;
+    z-index: 1000;
+    visibility: hidden;
+  }
+
+  
+
+.popup-fixed-center .leaflet-popup-content-wrapper {
+    padding: 0px !important;
+    height: 100%;
+    width: 100%;
+    border-radius: 0;
+    background-color: #f3953f;
 }
 
 
