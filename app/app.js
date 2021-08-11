@@ -349,7 +349,7 @@ const swiper = new Swiper('.swiper-container', {
 	  }
   }, true);
 
-swiper.on('slideChange', function () {
+swiper.on('sliddd', function () {
 		//console.log("prev:" + n)
 		
 		if (document.getElementById('swiper-container').style.visibility == "visible") {
