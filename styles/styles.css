@@ -192,12 +192,15 @@ z-index: 200 !important;
 }
 
 .image {
+    transition: 0.5s;
     width: calc(100% - 140px);
     height: auto;
     -webkit-filter: blur(8px); /* Safari 6.0 - 9.0 */
     filter: blur(8px);
 }
+
 .image-clear {
+    transition: 2s;
     width: calc(100% - 140px);
     height: auto;
     -webkit-filter: blur(0px); /* Safari 6.0 - 9.0 */
@@ -205,10 +208,8 @@ z-index: 200 !important;
 }
 
 
-.image:active {
-    -webkit-filter: blur(0px); /* Safari 6.0 - 9.0 */
-    filter: blur(0px);
-}
+
+
 
 #buttonBoxPlatform{
     position: absolute;

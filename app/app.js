@@ -238,11 +238,8 @@ function initMarkers(lang) {
 	}
 	var images = document.querySelectorAll(".image")
 	for (const image of images) {
-		image.ontouchstart = function (e) {
-			console.log("hey")
-			document.querySelector(".box").classList.toggle(".image-clear");
+		image.addEventListener('click', event => event.target.classList.toggle('image-clear'))
 		}
-	}
 	
 }
 
@@ -327,8 +324,8 @@ const swiper = new Swiper('.swiper-container', {
 	  }
   }, true);
 
-swiper.on('sliddd', function () {
-		//console.log("prev:" + n)
+swiper.on('slideChange', function () {
+		console.log("prev:" + n)
 		
 		if (document.getElementById('swiper-container').style.visibility == "visible") {
 			//make previus point smaller and set bigIcon for new point
