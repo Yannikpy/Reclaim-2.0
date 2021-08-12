@@ -225,12 +225,26 @@ const locations =
     ]
   },
   {
+    "order": "",
+    "info_de": "",
+    "info_en": "",
+    "artist": "",
+    "title": "Venloer Str./ Gürtel",
+    "text_de": "Die nächste Station ist der Hans-Böckler-Platz/Bahnhof West. Nimm die U3 (Richtung Thielenbruch) oder die U4 (Richtung Schlebusch). Mit dem Fahrstuhl oder über die Treppen kommst du hoch auf die Straße.",
+    "text_en": "The next station is Hans-Böckler-Platz/Bahnhof West. You can take either the U3 (direction Thielenbruch) or the U4 (direction Schlebusch). Once you arrived, take the elevator or use the stairs to get up to the street.",
+    "id": "venloer",
+    "location": [
+      50.950032, 
+      6.916579
+    ]
+  },
+  {
     "order": 17,
     "info_de": "",
     "info_en": "",
     "artist": "Dane Palmieri",
     "title": "your wounds are showing",
-    "text_de": "Your wounds are showing ist Teil eines fortlaufenden Projekts über die Bedeutung von Objekten und ihrer Erhaltung. Palmieris digitale Collage besteht aus neun Detailansichten einer Gipsnachbildung Jungfrau und Kind aus dem frühen 20. Jahrhundert, welche Antonio Rosselino zugeschrieben wird. Dieser Gipsabdruck ist Gegenstand seines ererbten Besitzes. Die Arbeit ist somit auch eine Auseinandersetzung mit seinem persönlichen Erbe und dem Erbe der Kultur im Allgemeinen. Grün hervorgehoben sind Risse und Beschädigungen, Spuren des ständigen Nachbesserns und Ausgleichens. Diese lebenslangen Einschreibungen dokumentieren nicht nur die fortwährende Zerbrechlichkeit dieses Objekts, sondern zeigen auch mit welchem Aufwand und Engagement für die Erhaltung von kulturell relevanten Objekten gearbeitet werden muss.",
+    "text_de": "Ab hier folgst du der Ludolf-Camphausen-Straße bis du die Vogelsanger Straße kreuzt und direkt die ersten Plakate siehst.",
     "text_en": "Your wounds are showing is part of an ongoing project on the meaning of objects and their preservation. Palmieri’s digital collage consists of nine detailed views of a reproduction plaster Virgin and Child from the 20th century, which is ascribed to Antonio Rossellino. Palmieri inherited this plaster cast. Therefore, the work is also an examination of his personal inheritance and of the inheritance of culture in general. Highlighted in green are cracks and damage, traces of constant repairs and adjustments. These lifelong inscriptions not only document this object’s perpetual fragility, but also demonstrate the effort and commitment that go into preserving culturally relevant objects.",
     "id": "11-Dane-Palmieri.jpg",
     "location": [
@@ -461,6 +475,20 @@ const locations =
       50.9404504437,
       6.9321281277
     ]
+  },
+  {
+    "order": "",
+    "info_de": "",
+    "info_en": "",
+    "artist": "",
+    "title": "Hans-Böckler-Platz",
+    "text_de": "Die nächste Station ist der S-Bahnhof Hansaring. Fahr ab Hans-Böckler-Platz/Bahnhof West mit der U3 (Richtung Thielenbruch), U4 (Richtung Schlebusch) oder U5 (Richtung Heumarkt) zum Friesenplatz. Von dort mit der U12 (Richtung Niehl) oder mit der U15 (Richtung Chroweiler) bis zum Hansaring. <br>Hier geht hoch auf die Straße und dort in die Ritterstraße zum nächsten Plakat.",
+    "text_en": "The next stop is the S-Bahn station Hansaring. From Hans-Böckler-Platz/Bahnhof West, take the U3 (direction Thielenbruch), U4 (direction Schlebusch) or U5 (direction Heumarkt) to Friesenplatz. From there take the U12 (direction Niehl) or the U15 (direction Chroweiler) to Hansaring. <br>Here, you go up the street and cross into Ritterstraße, where you will find the next poster ahead.",
+    "id": "hb",
+    "location": [
+      50.943284,
+       6.933427
+      ]
   },
   {
     "order": 34,

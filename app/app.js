@@ -102,7 +102,6 @@ iconAnchor:   [40, 30], // point of the icon which will correspond to marker's l
 });
 stationMarker = L.marker([50.951646, 6.918369], {icon: stationIcon})
 stationMarkers.addLayer(stationMarker);
-//L.marker([50.951646, 6.918369]).addTo(map);
 
 
 var stationIcon = L.icon({
@@ -181,7 +180,13 @@ function createContent(n, id, artist, title, text, info, insta, website) {
 	content = content.replace("_text_",text)
 	content = content.replace("_insta_",insta)
 	content = content.replace("_website_",website)
-	//content.replace("_info_",info)
+	if (info != ""){
+		content = content.replace("none", "block")
+		content = content.replace("_info_",info)
+		content = content.replace("myContent","myContentWithInfo")
+		content = content.replace("audioAndXBox","audioAndXBoxWithInfo")
+	}
+	
 	return content
 	}
 
@@ -189,43 +194,42 @@ function createContent(n, id, artist, title, text, info, insta, website) {
 
 // init all markers in correct Language
 // prepare Popup on buttom of map
-var markerOptions = {icon: pointIcon}
 
 var route = [];
 var markers = new L.FeatureGroup();
 map.addLayer(markers);
 
 function initMarkers(lang) {
-	map.closePopup();
 	markers.clearLayers();
 	route = [];
 	slides = [];
 	var i = 0;
 	for (loc of locations) {
-		if (loc.title == "") { // these are stations
+		if (loc.artist == "") { // these are stations
 			marker = eval(loc.id)
-			var infotext = "<div class='myContent'> " + buttons + " <p4>" + loc.title + "<br> <br>" + loc.text_en + "</p4>" + buttonsNext + "</div>"
 			marker.type = "station"
-			route.push(marker);		
-			slides.push(slide)
+			route.push(marker);	
+			content = document.getElementById('myStationTemplate').innerHTML
+			content = content.replace("_text_", loc.text_de)
+			content = content.replace("_title_", loc.title)
+			slides.push(content)
 			
 		}
 		else { // these are points
-			var marker = L.marker(loc.location, markerOptions).addTo(map)
+			var marker = L.marker(loc.location, {icon: pointIcon}).addTo(map)
 			marker.id = i;
 			marker.type = "art"
 			marker.on('click', openmyPopup)
 			markers.addLayer(marker)
 			route.push(marker);
 			
-			//var popup_content = createContent(i + 1, "Künster:in", "Titel", "Beschreibungstext, der sehr sehr sehr sehrsehr sehr sehr sehrsehr sehr sehr sehrsehr sehr sehr sehrsehr sehr sehr sehrsehr sehr sehr sehr lang ist", false, "insta", "website")
-			var content = createContent(i, loc.id, loc.artist, loc.title, loc.text_de, loc.info, "", "")
+			var content = createContent(loc.order, loc.id, loc.artist, loc.title, loc.text_de, loc.info_de, "", "")
 			slides.push(content)
 		}
 
-		
 		i++;
 	}
+
 	swiper.addSlide(1, slides)
 	//eventlisteners
 	var buttons = document.querySelectorAll(".closeBtn")
@@ -263,7 +267,7 @@ function playGuide(){
 	}
 }
 
-// Main function, centers points, and adds eventlisteners for Popupbutton
+// On Slidechange, centers points, and adds eventlisteners for Popupbutton
 function openmyPopup(e){
 		document.getElementById('swiper-container').style.visibility = "visible";
 		//console.log("click: " +  e.sourceTarget.id)
@@ -271,6 +275,9 @@ function openmyPopup(e){
 }
 
 function closemyPopup(){
+	slide = document.querySelector('.swiper-slide-active')
+	slide.querySelector('.image').style.transition = "0s";
+
 	document.getElementById('swiper-container').style.visibility = "hidden";
 	
 	//center view over target
@@ -288,12 +295,7 @@ function closemyPopup(){
 
 
 // detect desktop
-var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-if (!isMobile) {
-	
-	var languagetext = " <p6> Diese Karte ist für Mobiltelefone optimiert. Also schnapp Dir deine Freunde, dein Handy und dein Fahrrad und folge der Reclaim Route von Ehrenfeld über das Belgische Viertel bis hin zum Ebertplatz! <br> <br> This map is optimized for mobile phones. So, all you have got to do is grab your friends, your phone and your bike and follow the Reclaim Route from Ehrenfeld via the Belgian Quarter to Ebertplatz!</p6>"
-
-}
+//var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
 
 // init swiper
@@ -303,29 +305,10 @@ const swiper = new Swiper('.swiper-container', {
 	loop: true,  
   });
 
-  var startScroll, touchStart, touchCurrent;
-  swiper.slides.on('touchstdart', function (e) {
-	  startScroll = this.scrollTop;
-	  touchStart = e.targetTouches[0].pageY;
-  }, true);
-  swiper.slides.on('touchmdove', function (e) {
-	  touchCurrent = e.targetTouches[0].pageY;
-	  var touchesDiff = touchCurrent - touchStart;
-	  var slide = this;
-	  var onlyScrolling = 
-			  ( slide.scrollHeight > slide.offsetHeight ) &&
-			  (
-				  ( touchesDiff < 0 && startScroll === 0 ) ||
-				  ( touchesDiff > 0 && startScroll === ( slide.scrollHeight - slide.offsetHeight ) ) ||
-				  ( startScroll > 0 && startScroll < ( slide.scrollHeight - slide.offsetHeight ) )
-			  );
-	  if (onlyScrolling) {
-		  e.stopPropagation();
-	  }
-  }, true);
+
 
 swiper.on('slideChange', function () {
-		console.log("prev:" + n)
+		//console.log("prev:" + n)
 		
 		if (document.getElementById('swiper-container').style.visibility == "visible") {
 			//make previus point smaller and set bigIcon for new point
@@ -351,6 +334,8 @@ swiper.on('slideChange', function () {
 	
 			audio = new Audio('audio/'+((lang=="de") ? 'english/': 'german/' )+ 3  +'.mp3');
 			
+			slide = document.querySelector('.swiper-slide-active')
+			//slide.querySelector('.image').style.transition = "2s";
 		}			
   });
 

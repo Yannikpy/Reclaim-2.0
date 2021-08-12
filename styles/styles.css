@@ -31,8 +31,7 @@ p {
     font-size: 1.3em;
     line-height: 1;
     word-wrap: break-word !important;
-    display: inline-block;
-    
+    display: inline-block; 
 }
 
 p1 {
@@ -41,12 +40,11 @@ p1 {
 
 
 p4 {
-    font-size: 1.7em;
+    font-size: 1.3em;
     line-height: 1;
     word-wrap: break-word !important;
     display: inline-block;
-    padding-top: 0px;
-    
+    padding-top: 15px;
 }
 
 p6 {
@@ -59,7 +57,7 @@ p6 {
 
 p3 {
     margin-left: 15px;
-    font-size: 1.7em;
+    font-size: 1.3em;
     color: #f3953f !important;
 }
 
@@ -147,12 +145,27 @@ z-index: 200 !important;
     border-top: 5px solid black;
     background-color: #f3953f;
     z-index: 3000;
-    visibility: visible;
+    visibility: hidden;
   }
 
 
 .myContent {
-    margin: 15px;
+    margin-bottom: 15px;
+    margin-left: 15px;
+    margin-top: 0px;
+    margin-right: 15px;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.myContentWithInfo {
+    margin-bottom: 15px;
+    margin-left: 15px;
+    margin-top: 30px;
+    margin-right: 15px;
     height: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -164,42 +177,18 @@ z-index: 200 !important;
     display: none;  /* Safari and Chrome */
 }
 
-#myContentPlatform {
-    margin-bottom: 15px;
-    margin-left: 15px;
-    margin-top: 45px;
-    margin-right: 15px;
-}
 
-
-.buttoncontainer {
-    width: 100%;
-    display: inline-flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
-    margin-top: 15px;
-}
-
-
-
-#platformInfo {
-    position: absolute;
-    top: 0;
-    width:100%;
-    height: 30px;
-    background-color: black;
-    text-align: center;
-}
 
 .image {
-    transition: 0.5s;
+    padding-top: 15px;
     width: calc(100% - 140px);
     height: auto;
-    -webkit-filter: blur(8px); /* Safari 6.0 - 9.0 */
-    filter: blur(8px);
+    -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
+    filter: blur(5px);
 }
 
 .image-clear {
+    padding-top: 15px;
     transition: 2s;
     width: calc(100% - 140px);
     height: auto;
@@ -207,72 +196,32 @@ z-index: 200 !important;
     filter: blur(0px);
 }
 
+.infoBox {
+    position: absolute;
+    top: 0;
+    width:100%;
+    height: 30px;
+    background-color: black;
+    text-align: center;
+    z-index: 4001;
+}
 
+.audioAndXBox{
+    position: absolute;
+    top: 19px;
+    right: 15px;
+    height: 34px;
+    width: 65px;
+    
+}
 
-
-
-#buttonBoxPlatform{
+.audioAndXBoxWithInfo{
     position: absolute;
     top: 49px;
     right: 15px;
     height: 34px;
     width: 65px;
     
-}
-
-.audioAndXBox{
-    position: absolute;
-    top: 30px;
-    right: 15px;
-    height: 34px;
-    width: 65px;
-    
-}
-
-.titleBlock {
-    position: relative;
-    margin-left: 15px;
-    vertical-align: top;
-    display: inline-block;
-    width: calc(100% - 50px);
-    
-    
-}
-.titleParent {
-    width: 100%;
-    white-space: nowrap;
-
-    
-    
-}
-
-.buttoncontainerInsta {
-    width: 100%;
-
-}
-
-#insta {
-    height: 45px;
-    width: 45px;
-    margin-right: 45px;
-}
-
-.mynextbutton, .myprevbutton {
-    width: 80px;
-    height: 40px;
-}
-
-.donateIMG {
-    height: 200px;
-    width: 200px;
-    margin-top: 15px;
-}
-
-#wwww {
-    position: relative;
-    top: -8px;
-    height: 46px;
-    width: 130px;
 }
 
 .closeBtn {
@@ -292,8 +241,64 @@ z-index: 200 !important;
     height:34px;
 }
 
+.titleBlock {
+    position: relative;
+    margin-left: 15px;
+    vertical-align: top;
+    display: inline-block;
+    width: calc(100% - 50px);
+    
+    
+}
+.titleParent {
+    width: 100%;
+    white-space: nowrap;
+    
+}
+
+.buttoncontainerInsta {
+    width: 100%;
+
+}
+
+#insta {
+    height: 45px;
+    width: 45px;
+    margin-right: 45px;
+}
+
+.buttoncontainerNext {
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+.mynextbutton, .myprevbutton {
+    width: 80px;
+    height: 40px;
+}
 
 
+
+
+
+
+#wwww {
+    position: relative;
+    top: -8px;
+    height: 46px;
+    width: 130px;
+}
+
+
+
+
+.donateIMG {
+    height: 200px;
+    width: 200px;
+    margin-top: 15px;
+}
 
 #cookiebutton ::before {
     content: "";

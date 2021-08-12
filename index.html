@@ -53,15 +53,19 @@
 		<div class="swiper-container my-popup" id="swiper-container">
 			<!-- Additional required wrapper -->
 			<div class="swiper-wrapper" >
-				<template id='myContentTemplate' style="visibility: hidden;">
+				<template id='myContentTemplate' >
 					<div class="swiper-slide">
+						<div class='infoBox'style="display: none;"><p3>_info_</p3></div>
 						<div class='myContent'>
+							
 							<div class='audioAndXBox'>
 								<input src='symbols/X.svg' class='closeBtn' type='image'></input>
 								<input src='symbols/Audioguide.svg' class='audioBtn' type='image'></input> 
 							</div>
 							
-							<img class='image' src='images/_id_'>	
+							<div class="image-container">
+								<img class='image' src='images/_id_'>	
+							</div>
 							<br> <br> 
 							<div class='infoBlock'>  
 								<div class='titleParent'><p>_n_</p>
@@ -81,6 +85,22 @@
 									<img id='wwww' src='symbols/wwww.svg'></img> 
 								</a>
 							</div>
+							<div class=buttoncontainerNext> 
+								<input src='symbols/Pfeil_links.svg' class='myprevbutton' type='image'></input> 
+								<input src= 'symbols/Pfeil_rechts.svg' class='mynextbutton' type='image'></input> 
+							</div>
+						</div>
+					</div>
+				</template>
+				<template id='myStationTemplate' style="visibility: hidden;">
+					<div class="swiper-slide">
+						<div class='myContent'>
+							<div class='audioAndXBox'>
+								<input src='symbols/X.svg' class='closeBtn' type='image'></input>
+							</div>
+							<p4>_title_</p4> <br><br>
+							<p>_text_</p> 
+
 							<div class=buttoncontainer> 
 								<input src='symbols/Pfeil_links.svg' class='myprevbutton' type='image'></input> 
 								<input src= 'symbols/Pfeil_rechts.svg' class='mynextbutton' type='image'></input> 
