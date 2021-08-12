@@ -31,7 +31,7 @@
   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
   crossorigin=""></script>
 
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 	
 
@@ -48,13 +48,50 @@
 		<div>Wenn du auf unserer Website surfst, stimmst du der Verwendung von Cookies zu.<button id='cookiebutton'> Ok </button></div>
 		</div>
 	</div>
-
-    <div class="swiper-container my-popup" id="swiper-container">
-        <!-- Additional required wrapper -->
-        <div class="swiper-wrapper" >
-
-        </div>
-    </div>
+	
+	<div>
+		<div class="swiper-container my-popup" id="swiper-container">
+			<!-- Additional required wrapper -->
+			<div class="swiper-wrapper" >
+				<template id='myContentTemplate' style="visibility: hidden;">
+					<div class="swiper-slide">
+						<div class='myContent'>
+							<div class='audioAndXBox'>
+								<input src='symbols/X.svg' class='closeBtn' type='image'></input>
+								<input src='symbols/Audioguide.svg' class='audioBtn' type='image'></input> 
+							</div>
+							
+							<img class='image' src='images/_id_'>	
+							<br> <br> 
+							<div class='infoBlock'>  
+								<div class='titleParent'><p>_n_</p>
+								<div class='titleBlock'>
+									<p>_artist_ 
+									<br><i>_title_</i> 
+									</p></div>
+								</div><br>
+								<p>_text_</p> 
+								
+							</div>
+							<div class='buttoncontainerInsta'>
+								<a target='_blank' rel='noopener noreferrer'  href='_insta_'> 
+									<img id='insta' src='symbols/Instagram.svg'></img>
+								</a>
+								<a target='_blank' rel='noopener noreferrer'  href='_website_'>
+									<img id='wwww' src='symbols/wwww.svg'></img> 
+								</a>
+							</div>
+							<div class=buttoncontainer> 
+								<input src='symbols/Pfeil_links.svg' class='myprevbutton' type='image'></input> 
+								<input src= 'symbols/Pfeil_rechts.svg' class='mynextbutton' type='image'></input> 
+							</div>
+						</div>
+					</div>
+				</template>
+			</div>
+		</div>
+	</div>
+    
 
     <script type="text/javascript" src="data/locations.js"></script>
     <script type="text/javascript" src="data/text.js"></script>

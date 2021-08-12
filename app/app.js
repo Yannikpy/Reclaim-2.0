@@ -65,12 +65,8 @@ var pointIconL = L.icon({
 latlngs_for_Polyline = [];
 route = [];
 for (const loc of locations) {
-	if (loc.QID != "") {
-		latlngs_for_Polyline.push(loc.location);
-		
-	}
+			latlngs_for_Polyline.push(loc.location);
 }
-
 var polyline = L.polyline(latlngs_for_Polyline, {className: 'my_polyline'}).addTo(map);
 
 // show current position
@@ -176,34 +172,16 @@ function changeLang() {
 
 
 // function that takes creates html-string from information about artwork
-function createContent(n, artist, title, text, info, insta, website) {
-
-	var content = "<img class='image' src='images/" + 2 + ".jpg'>	<br> <br> <div id='infoBlock'>  <div class='titleParent'><p> " + n + "</p><div id='titleBlock'><p>" + artist + "<br><i> "+ title + " </i> </p></div></div><br><div class='textblock'> <p>" + text + "</p> </div>" + "</div>"
-	var buttons = "<input src='symbols/X.svg' class='closeBtn' type='image'></input> <input src='symbols/Audioguide.svg' class='audioBtn' type='image'></input> "
-	
-	if (insta != "—" || website != "—") {
-		var logos = "<div class='buttoncontainerInsta'> "
-		if (insta != "—") {
-		logos = logos + "<a target='_blank' rel='noopener noreferrer'  href='https://www.instagram.com/"+ insta +"'> <img id='insta' src='symbols/Instagram.svg'></img></a>" 
-		}
-		if (website != "—") {
-		logos = logos + "<a target='_blank' rel='noopener noreferrer'  href='"+ website +"'><img id='wwww' src='symbols/wwww.svg'></img> </a>"
-		}
-		logos = logos + "</div>"
-	}
-	//var buttonsNext = " <div class=buttoncontainer> <input src='symbols/Pfeil_links.svg' class='myprevbutton' type='image'></input> <input src= 'symbols/Pfeil_rechts.svg' class='mynextbutton' type='image'></input> </div>";	
-	
-	if (info) {
-	content = content + "<div id='buttonBoxPlatform'>" + buttons + "</div>" 
-	content = content + logos
-	content = "<div id='myContentPlatform'>" + content  + "</div>"
-	content = content + "<div id='platformInfo'><p3>"+ info +"</p3></div>";
-	}
-	else {
-	content = content + "<div id='buttonBox'>" + buttons + "</div>" 
-	content = content + logos
-	content = "<div class='myContent'>" + content + "</div>"
-	}
+function createContent(n, id, artist, title, text, info, insta, website) {
+	content = document.getElementById('myContentTemplate').innerHTML
+	content = content.replace("_n_", n)
+	content = content.replace("_id_",id)
+	content = content.replace("_artist_",artist)
+	content = content.replace("_title_",title)
+	content = content.replace("_text_",text)
+	content = content.replace("_insta_",insta)
+	content = content.replace("_website_",website)
+	//content.replace("_info_",info)
 	return content
 	}
 
@@ -224,19 +202,15 @@ function initMarkers(lang) {
 	slides = [];
 	var i = 0;
 	for (loc of locations) {
-		if (loc.adress == "") { // these are stations
+		if (loc.title == "") { // these are stations
 			marker = eval(loc.id)
 			var infotext = "<div class='myContent'> " + buttons + " <p4>" + loc.title + "<br> <br>" + loc.text_en + "</p4>" + buttonsNext + "</div>"
 			marker.type = "station"
-			route.push(marker);
-			var slide = "<div class='swiper-slide'>" + i + "<br> <br>" + loc.id + "</div>"
-			var slide = "<div class='swiper-slide'> <div class='my-stuff'></div></div>"
-			
+			route.push(marker);		
 			slides.push(slide)
 			
 		}
 		else { // these are points
-			
 			var marker = L.marker(loc.location, markerOptions).addTo(map)
 			marker.id = i;
 			marker.type = "art"
@@ -245,12 +219,8 @@ function initMarkers(lang) {
 			route.push(marker);
 			
 			//var popup_content = createContent(i + 1, "Künster:in", "Titel", "Beschreibungstext, der sehr sehr sehr sehrsehr sehr sehr sehrsehr sehr sehr sehrsehr sehr sehr sehrsehr sehr sehr sehrsehr sehr sehr sehr lang ist", false, "insta", "website")
-			var content = " <p> Diese Karte ist für Mobiltelefone optimiert. Also schnapp Dir deine Freunde, dein Handy und dein Fahrrad und folge der Reclaim Route von Ehrenfeld über das Belgische Viertel bis hin zum Ebertplatz! <br> <br> This map is optimized for mobile phones. So, all you have got to do is grab your friends, your phone and your bike and follow the Reclaim Route from Ehrenfeld via the Belgian Quarter to Ebertplatz!</p>"
-
-			var popup_content = "<div class='myContent'>" + content + content + "</div>"
-
-			var slide = "<div class='swiper-slide'> <div class='my-stuff'>"+content + content+"</div></div>"
-			slides.push(slide)
+			var content = createContent(i, loc.id, loc.artist, loc.title, loc.text_de, loc.info, "", "")
+			slides.push(content)
 		}
 
 		
@@ -266,6 +236,14 @@ function initMarkers(lang) {
 	for (const button of buttons){
 		button.addEventListener('click', playGuide)
 	}
+	var images = document.querySelectorAll(".image")
+	for (const image of images) {
+		image.ontouchstart = function (e) {
+			console.log("hey")
+			document.querySelector(".box").classList.toggle(".image-clear");
+		}
+	}
+	
 }
 
 
@@ -329,11 +307,11 @@ const swiper = new Swiper('.swiper-container', {
   });
 
   var startScroll, touchStart, touchCurrent;
-  swiper.slides.on('touchstart', function (e) {
+  swiper.slides.on('touchstdart', function (e) {
 	  startScroll = this.scrollTop;
 	  touchStart = e.targetTouches[0].pageY;
   }, true);
-  swiper.slides.on('touchmove', function (e) {
+  swiper.slides.on('touchmdove', function (e) {
 	  touchCurrent = e.targetTouches[0].pageY;
 	  var touchesDiff = touchCurrent - touchStart;
 	  var slide = this;
@@ -380,5 +358,6 @@ swiper.on('sliddd', function () {
   });
 
   initMarkers("de")
+
 
   

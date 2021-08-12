@@ -28,7 +28,7 @@ p, p1, p4, p6 {
 
 
 p {
-    font-size: 1.7em;
+    font-size: 1.3em;
     line-height: 1;
     word-wrap: break-word !important;
     display: inline-block;
@@ -84,6 +84,8 @@ mix-blend-mode: multiply;
 z-index: 200 !important;
 }
 
+.leaflet-fade-anim .leaflet-tile,.leaflet-zoom-anim .leaflet-zoom-animated { will-change:auto !important; }
+
 #logo {
     position: absolute;
     z-index: 1000;
@@ -128,16 +130,36 @@ z-index: 200 !important;
 }
 
 
+
+
+
+
+
+
+
+/*Pop up*/
+.my-popup {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 40%;
+    bottom: 0;
+    border-top: 5px solid black;
+    background-color: #f3953f;
+    z-index: 3000;
+    visibility: visible;
+  }
+
+
 .myContent {
+    margin: 15px;
     height: 100%;
     overflow-y: scroll;
     overflow-x: hidden;
-}
-
-.myContent {
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox */
 }
+
 .myContent::-webkit-scrollbar { 
     display: none;  /* Safari and Chrome */
 }
@@ -150,18 +172,12 @@ z-index: 200 !important;
 }
 
 
-.leaflet-fade-anim .leaflet-tile,.leaflet-zoom-anim .leaflet-zoom-animated { will-change:auto !important; }
-    
-
-
 .buttoncontainer {
     width: 100%;
     display: inline-flex;
     justify-content: space-between;
     margin-bottom: 15px;
     margin-top: 15px;
-    
-    
 }
 
 
@@ -178,6 +194,20 @@ z-index: 200 !important;
 .image {
     width: calc(100% - 140px);
     height: auto;
+    -webkit-filter: blur(8px); /* Safari 6.0 - 9.0 */
+    filter: blur(8px);
+}
+.image-clear {
+    width: calc(100% - 140px);
+    height: auto;
+    -webkit-filter: blur(0px); /* Safari 6.0 - 9.0 */
+    filter: blur(0px);
+}
+
+
+.image:active {
+    -webkit-filter: blur(0px); /* Safari 6.0 - 9.0 */
+    filter: blur(0px);
 }
 
 #buttonBoxPlatform{
@@ -189,7 +219,7 @@ z-index: 200 !important;
     
 }
 
-#buttonBox{
+.audioAndXBox{
     position: absolute;
     top: 30px;
     right: 15px;
@@ -198,7 +228,7 @@ z-index: 200 !important;
     
 }
 
-#titleBlock {
+.titleBlock {
     position: relative;
     margin-left: 15px;
     vertical-align: top;
@@ -207,7 +237,7 @@ z-index: 200 !important;
     
     
 }
-#titleParent {
+.titleParent {
     width: 100%;
     white-space: nowrap;
 
@@ -224,6 +254,11 @@ z-index: 200 !important;
     height: 45px;
     width: 45px;
     margin-right: 45px;
+}
+
+.mynextbutton, .myprevbutton {
+    width: 80px;
+    height: 40px;
 }
 
 .donateIMG {
@@ -313,26 +348,6 @@ text-align: left;
 #cookiehinweis {
 line-height: 20px;
 font-size: 14px;
-}
-
-.my-popup {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 40%;
-    bottom: 0;
-    border-top: 5px solid black;
-    background-color: #f3953f;
-    z-index: 1500;
-    visibility: hidden;
-  }
-
-.my-stuff {
-    width: 100%;
-    height: 500px;
-    background-color: #f3953f;
-    overflow-y: scroll;
-    overflow-x: hidden;
 }
 
 
