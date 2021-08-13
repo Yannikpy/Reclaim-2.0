@@ -178,22 +178,32 @@ z-index: 200 !important;
 }
 
 
+.image-container {
+overflow: hidden ;
+
+margin-top: 15px;
+text-align: center;
+}
+
 
 .image {
-    padding-top: 15px;
-    width: calc(100% - 140px);
-    height: auto;
-    -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
-    filter: blur(5px);
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    -webkit-filter: blur(8px); /* Safari 6.0 - 9.0 */
+    filter: blur(8px);
+    margin: -0px -5px -10px -5px;
 }
 
 .image-clear {
-    padding-top: 15px;
-    transition: 2s;
-    width: calc(100% - 140px);
-    height: auto;
+    width: 100%;
+    height: 100%;
+    transition: 3s;
+    opacity: 1;
     -webkit-filter: blur(0px); /* Safari 6.0 - 9.0 */
     filter: blur(0px);
+    margin: -0px -5px -10px -5px;
+    
 }
 
 .infoBox {
@@ -208,7 +218,7 @@ z-index: 200 !important;
 
 .audioAndXBox{
     position: absolute;
-    top: 19px;
+    top: 15px;
     right: 15px;
     height: 34px;
     width: 65px;
@@ -217,7 +227,7 @@ z-index: 200 !important;
 
 .audioAndXBoxWithInfo{
     position: absolute;
-    top: 49px;
+    top: 45px;
     right: 15px;
     height: 34px;
     width: 65px;
@@ -271,7 +281,7 @@ z-index: 200 !important;
     width: 100%;
     display: inline-flex;
     justify-content: space-between;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
     margin-top: 15px;
 }
 .mynextbutton, .myprevbutton {
@@ -358,6 +368,59 @@ font-size: 14px;
 
 
 @media only screen and (min-width: 600px) {
+    .image-container {
+        position: relativ;
+        width: 100%;
+        overflow: hidden;
+        text-align: center;
+        }
+    
+    .image {
+        width: 100%;
+        height: 100%;
+        opacity: 0.3;
+        -webkit-filter: blur(8px); /* Safari 6.0 - 9.0 */
+        filter: blur(8px);
+        margin: -0px -5px -10px -5px;
+    }
+    
+    .image-clear {
+        width: 100%;
+        height: 100%;
+        transition: 3s;
+        opacity: 1;
+        -webkit-filter: blur(0px); /* Safari 6.0 - 9.0 */
+        filter: blur(0px);
+        margin: -0px -5px -10px -5px;
+        
+    }
+    
+    
+    .my-popup {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        right: 80%;
+        top: 25%;
+        border-top: 5px solid black;
+        background-color: #f3953f;
+        z-index: 3000;
+        visibility: hidden;
+      }
+    
+    
+    .myContent {
+        margin-bottom: 15px;
+        margin-left: 15px;
+        margin-top: 0px;
+        margin-right: 15px;
+        height: 100%;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        -ms-overflow-style: none;  /* Internet Explorer 10+ */
+        scrollbar-width: none;  /* Firefox */
+    }
+    
 
     #info {
         position: absolute;
@@ -369,17 +432,7 @@ font-size: 14px;
     }
 
 
-    .popup-fixed-center {
-        padding: 0 !important;
-        position: fixed;
-        top: 20%;
-        bottom: 30%  !important;
-        left: 10% !important;
-        right: 10% !important;
-        transform: none !important;
-        margin: 0;
-        border: 5px solid black;
-    }
+
     
     .popup-fixed-center .leaflet-popup-content-wrapper {
         padding: 0px !important;
