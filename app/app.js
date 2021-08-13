@@ -171,8 +171,14 @@ function changeLang() {
 
 
 // function that takes creates html-string from information about artwork
-function createContent(n, id, artist, title, text, info, insta, website) {
-	content = document.getElementById('myContentTemplate').innerHTML
+function createContent(n, id, artist, title, text, info, insta, website, isMobile) {
+	if (isMobile){
+		content = document.getElementById('myContentTemplateMobile').innerHTML
+	}
+	else {
+		content = document.getElementById('myContentTemplateDesktop').innerHTML
+	}
+	
 	content = content.replace("_n_", n)
 	content = content.replace("_id_",id)
 	content = content.replace("_artist_",artist)
@@ -200,12 +206,17 @@ var markers = new L.FeatureGroup();
 map.addLayer(markers);
 
 function initMarkers(lang) {
+	var	imgWidth = window.innerWidth
+	isMobile = (imgWidth <= 600)
+	
+	
 	markers.clearLayers();
 	route = [];
 	slides = [];
 	var i = 0;
 	for (loc of locations) {
 		if (loc.artist == "") { // these are stations
+			if (isMobile){
 			marker = eval(loc.id)
 			marker.type = "station"
 			route.push(marker);	
@@ -213,6 +224,8 @@ function initMarkers(lang) {
 			content = content.replace("_text_", loc.text_de)
 			content = content.replace("_title_", loc.title)
 			slides.push(content)
+			}
+			
 			
 		}
 		else { // these are points
@@ -223,7 +236,7 @@ function initMarkers(lang) {
 			markers.addLayer(marker)
 			route.push(marker);
 			
-			var content = createContent(loc.order, loc.id, loc.artist, loc.title, loc.text_de, loc.info_de, "", "")
+			var content = createContent(loc.order, loc.id, loc.artist, loc.title, loc.text_de, loc.info_de, "", "", isMobile)
 			slides.push(content)
 		}
 
@@ -240,10 +253,36 @@ function initMarkers(lang) {
 	for (const button of buttons){
 		button.addEventListener('click', playGuide)
 	}
-	var images = document.querySelectorAll(".image")
-	for (const image of images) {
+	var buttons = document.querySelectorAll(".myprevbutton")
+	for (const button of buttons){
+		button.addEventListener('click', e => swiper.slidePrev())
+	}
+	var buttons = document.querySelectorAll(".mynextbutton")
+	for (const button of buttons){
+		button.addEventListener('click', e => swiper.slideNext())
+	}
+	
+
+	
+	if (isMobile){
+		var images = document.querySelectorAll(".image")
+		for (const image of images) {
 		image.addEventListener('click', event => event.target.classList.toggle('image-clear'))
 		}
+		var	imgWidth = window.innerWidth - 140
+		var	imgHeight = imgWidth * (1436/2230)
+		var imageContainers = document.querySelectorAll(".image-container")
+		for (imageContainer of imageContainers) {
+			imageContainer.style.width = imgWidth + "px";
+			imageContainer.style.height = imgHeight + "px";
+		}
+	}
+	else {
+		var imgHeight = document.querySelector(".image").style.height
+		var buttons = document.querySelectorAll(".audioAndXBox")
+
+	}
+	
 	
 }
 
@@ -309,6 +348,7 @@ const swiper = new Swiper('.swiper-container', {
 
 swiper.on('slideChange', function () {
 		//console.log("prev:" + n)
+
 		
 		if (document.getElementById('swiper-container').style.visibility == "visible") {
 			//make previus point smaller and set bigIcon for new point
@@ -322,9 +362,12 @@ swiper.on('slideChange', function () {
 			}
 	
 			//center view over target
+			var	imgWidth = window.innerWidth
+			offsety = (imgWidth <= 600)? 0.0015: 0;
+			offsetx = (imgWidth <= 600)? 0: 0.001; 
 			marker = route[n]
 			let xy = marker.getLatLng();
-			map.setView(L.latLng(xy.lat - 0.0015, xy.lng), 17, {animate:true, duration:0.6});
+			map.setView(L.latLng(xy.lat - offsety, xy.lng - offsetx), 17, {animate:true, duration:0.6});
 
 
 			// audio guide
@@ -334,7 +377,7 @@ swiper.on('slideChange', function () {
 	
 			audio = new Audio('audio/'+((lang=="de") ? 'english/': 'german/' )+ 3  +'.mp3');
 			
-			slide = document.querySelector('.swiper-slide-active')
+			//slide = document.querySelector('.swiper-slide-active')
 			//slide.querySelector('.image').style.transition = "2s";
 		}			
   });

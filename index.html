@@ -17,9 +17,9 @@
 
 	<title>Reclaim Route - Reclaim Award</title>
 	
-    <meta name="description" content="Werbung Raus – Kunst Rein! Die Stadt wird zum Museum! 40 x Kunst auf Plakatflächen. Starte Deine Route durch Köln und erlebe jetzt den Reclaim Award 2021!">
+    <meta name="description" content="Kunst auf Werbeflächen: Die Stadt wird zum Museum! 44 Kunstwerke von internationalen Künstler:innen auf Plakatflächen im urbanen Raum Kölns. Starte jetzt Deine Route und erlebe den Reclaim Award 2021">
 	<meta property="og:title" content="Reclaim Tour" />
-	<meta property="og:description" content="Werbung Raus – Kunst Rein! Die Stadt wird zum Museum! 40 x Kunst auf Plakatflächen. Starte Deine Route durch Köln und erlebe jetzt den Reclaim Award 2021!">
+	<meta property="og:description" content="Kunst auf Werbeflächen: Die Stadt wird zum Museum! 44 Kunstwerke von internationalen Künstler:innen auf Plakatflächen im urbanen Raum Kölns. Starte jetzt Deine Route und erlebe den Reclaim Award 2021">
 	<meta property="og:image" content="symbols/share-icon.png">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
@@ -49,24 +49,77 @@
 		</div>
 	</div>
 	
-	<div>
-		<div class="swiper-container my-popup" id="swiper-container">
-			<!-- Additional required wrapper -->
-			<div class="swiper-wrapper" >
-				<template id='myContentTemplate' >
-					<div class="swiper-slide">
-						<div class='infoBox'style="display: none;"><p3>_info_</p3></div>
-						<div class='myContent'>
+	<div class="swiper-container my-popup" id="swiper-container">
+		<!-- Additional required wrapper -->
+		<div class="swiper-wrapper" >
+			<template id='myContentTemplateMobile' >
+				<div class="swiper-slide">
+					<div class='infoBox'style="display: none;"><p3>_info_</p3></div>
+					<div class='myContent'>
+						
+						<div class='audioAndXBox'>
+							<input src='symbols/X.svg' class='closeBtn' type='image'></input>
+							<input src='symbols/Audioguide.svg' class='audioBtn' type='image'></input> 
+						</div>
+						
+						<div class="image-container">
+							<img class='image' src='images/_id_'>
+						</div>
+						<br> <br> 
+						<div class='infoBlock'>  
+							<div class='titleParent'><p>_n_</p>
+							<div class='titleBlock'>
+								<p>_artist_ 
+								<br><i>_title_</i> 
+								</p></div>
+							</div><br>
+							<p>_text_</p> 
 							
-							<div class='audioAndXBox'>
+						</div>
+						<div class='buttoncontainerInsta'>
+							<a target='_blank' rel='noopener noreferrer'  href='_insta_'> 
+								<img id='insta' src='symbols/Instagram.svg'></img>
+							</a>
+							<a target='_blank' rel='noopener noreferrer'  href='_website_'>
+								<img id='wwww' src='symbols/wwww.svg'></img> 
+							</a>
+						</div>
+						<div class=buttoncontainerNext> 
+							<input src='symbols/Pfeil_links.svg' class='myprevbutton' type='image'></input> 
+							<input src= 'symbols/Pfeil_rechts.svg' class='mynextbutton' type='image'></input> 
+						</div>
+						<br>
+					</div>
+				</div>
+			</template>
+			<template id='myStationTemplate' style="visibility: hidden;">
+				<div class="swiper-slide">
+					<div class='myContent'>
+						<div class='audioAndXBox'>
+							<input src='symbols/X.svg' class='closeBtn' type='image'></input>
+						</div>
+						<p4>_title_</p4> <br><br>
+						<p>_text_</p> 
+
+						<div class=buttoncontainerNext> 
+							<input src='symbols/Pfeil_links.svg' class='myprevbutton' type='image'></input> 
+							<input src= 'symbols/Pfeil_rechts.svg' class='mynextbutton' type='image'></input> 
+						</div>
+						<br>
+					</div>
+				</div>
+			</template>
+			<template id='myContentTemplateDesktop' >
+				<div class="swiper-slide my-slide">
+					<img class='image' src='images/_id_'>
+					<div class='infoBox'style="display: none;"><p3>_info_</p3></div>
+					<div class='my-content-box'>
+						<div class="my-content-desktop">
+							<div class='audio-and-x-box-desktop'>
 								<input src='symbols/X.svg' class='closeBtn' type='image'></input>
 								<input src='symbols/Audioguide.svg' class='audioBtn' type='image'></input> 
 							</div>
-							
-							<div class="image-container">
-								<img class='image' src='images/_id_'>	
-							</div>
-							<br> <br> 
+			
 							<div class='infoBlock'>  
 								<div class='titleParent'><p>_n_</p>
 								<div class='titleBlock'>
@@ -89,26 +142,28 @@
 								<input src='symbols/Pfeil_links.svg' class='myprevbutton' type='image'></input> 
 								<input src= 'symbols/Pfeil_rechts.svg' class='mynextbutton' type='image'></input> 
 							</div>
+							<br>
 						</div>
 					</div>
-				</template>
-				<template id='myStationTemplate' style="visibility: hidden;">
-					<div class="swiper-slide">
-						<div class='myContent'>
-							<div class='audioAndXBox'>
-								<input src='symbols/X.svg' class='closeBtn' type='image'></input>
-							</div>
-							<p4>_title_</p4> <br><br>
-							<p>_text_</p> 
+				</div>
+			</template>
+			<template id='myStationTemplateDesktop' style="visibility: hidden;">
+				<div class="swiper-slide">
+					<div class='myContent'>
+						<div class='audioAndXBox'>
+							<input src='symbols/X.svg' class='closeBtn' type='image'></input>
+						</div>
+						<p4>_title_</p4> <br><br>
+						<p>_text_</p> 
 
-							<div class=buttoncontainer> 
-								<input src='symbols/Pfeil_links.svg' class='myprevbutton' type='image'></input> 
-								<input src= 'symbols/Pfeil_rechts.svg' class='mynextbutton' type='image'></input> 
-							</div>
+						<div class=buttoncontainerNext> 
+							<input src='symbols/Pfeil_links.svg' class='myprevbutton' type='image'></input> 
+							<input src= 'symbols/Pfeil_rechts.svg' class='mynextbutton' type='image'></input> 
 						</div>
+						<br>
 					</div>
-				</template>
-			</div>
+				</div>
+			</template>
 		</div>
 	</div>
     
