@@ -14,7 +14,7 @@ body {
     font-family: 'Lausanne' !important;
     padding: 0;
     margin: 0;
-
+    overflow: hidden;
 }
 
 html, body, #map {
@@ -83,7 +83,8 @@ z-index: 200 !important;
     top: 15px;
 }
 
-#info {
+
+#infoBtn {
     position: absolute;
     top: 15px;
     right: 10px;
@@ -91,6 +92,7 @@ z-index: 200 !important;
     width: 45px;
     height:45px;
 }
+
 
 #langBtn {
     font: Lausanne;
@@ -117,9 +119,9 @@ z-index: 200 !important;
     cursor: pointer;
 }
 
-
-
-
+.swiper-container {
+    visibility: hidden;
+}
 
 
 
@@ -135,9 +137,12 @@ z-index: 200 !important;
     border-top: 5px solid black;
     background-color: #f3953f;
     z-index: 3000;
-    visibility: hidden;
   }
 
+#info-popup
+{
+    z-index: 3001;
+}
 
 .myContent {
     margin-bottom: 15px;
@@ -211,8 +216,7 @@ text-align: center;
     top: 15px;
     right: 15px;
     height: 34px;
-    width: 65px;
-    
+    width: 65px;  
 }
 
 .audioAndXBoxWithInfo{
@@ -220,8 +224,7 @@ text-align: center;
     top: 45px;
     right: 15px;
     height: 34px;
-    width: 65px;
-    
+    width: 65px; 
 }
 
 .closeBtn {
@@ -400,10 +403,7 @@ font-size: 14px;
         right: 75%;
         top: 20%;
         border-top: 0;
-      
-        z-index: 3000;
-        visibility: hidden;
-        
+        z-index: 3000;        
       }
     
     .my-content-box {
@@ -417,7 +417,21 @@ font-size: 14px;
         margin-left: 15px;
         margin-right: 15px;;
     }
+    .audioAndXBox{
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        height: 34px;
+        width: 65px;  
+    }
     
+    .audioAndXBoxWithInfo{
+        position: fixed;
+        top: 45px;
+        right: 15px;
+        height: 34px;
+        width: 65px; 
+    }
     .closeBtn {
         position: absolute;
         right: 0;
