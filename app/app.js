@@ -384,7 +384,6 @@ const swiper = new Swiper('.swiper-container', {
 	direction: 'horizontal',
 	cssMode: isMobile? true:  false,
 	loop: true,
-	longSwipes: false,
   });
 
 
