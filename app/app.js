@@ -234,7 +234,6 @@ function initMarkers(lang) {
 			marker.on('click', openmyPopup)
 			markers.addLayer(marker)
 			route.push(marker);
-	
 			if (lang=="de"){
 				var content = createContent(loc.order, loc.id, loc.artist, loc.title, loc.text_de, loc.info_de, loc.insta, loc.website, isMobile)
 			}
@@ -251,7 +250,7 @@ function initMarkers(lang) {
 		i++;
 	}
 
-	swiper.addSlide(0, slides)
+	swiper.addSlide(1, slides)
 
 	infoPopup = document.getElementById("info-popup")
 	var infotext = (lang = "de") ? infotext_de : infotext_en;
