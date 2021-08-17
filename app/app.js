@@ -2,6 +2,11 @@ document.getElementById('cookiebutton').addEventListener('click', function(){doc
 
 var n = 0;
 
+var	imgWidth = window.innerWidth
+isMobile = (imgWidth <= 600)
+offsety = isMobile? 0.0015: 0;
+offsetx = isMobile? 0: 0.001; 
+
 // check if artwork name is given in 
 const queryString = location.search;
 const urlParams = new URLSearchParams(queryString);
@@ -13,7 +18,7 @@ const map = L.map('map',{
 ScrollWheelZoom: true,
 attributionControl: false,
 zoomControl: false
-}).setView([50.9385, 6.935], 13);
+}).setView([50.9385 - offsetx*2, 6.935 - offsety*2], 14);
 
 // add tileLayer for blue Color
 const mypane = map.createPane('color');
@@ -202,8 +207,7 @@ var markers = new L.FeatureGroup();
 map.addLayer(markers);
 
 function initMarkers(lang) {
-	var	imgWidth = window.innerWidth
-	isMobile = (imgWidth <= 600)
+
 	
 	swiper.removeAllSlides();
 	markers.clearLayers();
@@ -361,10 +365,6 @@ function closemyPopup(){
 }
 
 
-// detect desktop
-var	imgWidth = window.innerWidth
-isMobile = (imgWidth <= 600)
-
 
 
 // init swiper
@@ -373,7 +373,8 @@ const swiper = new Swiper('.swiper-container', {
 	direction: 'horizontal',
 	cssMode: isMobile? true:  false,
 	loop: true,
-	//touchMoveStopPropagation: true,
+	longswipes: false,
+	touchMoveStopPropagation: true,
   });
 
 
@@ -394,9 +395,6 @@ swiper.on('slideChange', function () {
 			}
 	
 			//center view over target
-			var	imgWidth = window.innerWidth
-			offsety = (imgWidth <= 600)? 0.0015: 0;
-			offsetx = (imgWidth <= 600)? 0: 0.001; 
 			marker = route[n]
 			let xy = marker.getLatLng();
 			map.setView(L.latLng(xy.lat - offsety, xy.lng - offsetx), 17, {animate:true, duration:0.6});
