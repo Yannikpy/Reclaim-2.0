@@ -167,7 +167,7 @@ function changeLang() {
 
 
 // function that takes creates html-string from information about artwork
-function createContent(n, id, artist, title, text, info, insta, website, isMobile) {
+function createContent(order, id, artist, title, text, info, insta, website, isMobile) {
 	if (isMobile){
 		content = document.getElementById('myContentTemplateMobile').innerHTML
 	}
@@ -175,7 +175,7 @@ function createContent(n, id, artist, title, text, info, insta, website, isMobil
 		content = document.getElementById('myContentTemplateDesktop').innerHTML
 	}
 	
-	content = content.replace("_n_", n)
+	content = content.replace("_n_", order)
 	content = content.replace("_id_",id)
 	content = content.replace("_artist_",artist)
 	content = content.replace("_title_",title)
@@ -251,7 +251,7 @@ function initMarkers(lang) {
 		i++;
 	}
 
-	swiper.addSlide(1, slides)
+	swiper.addSlide(0, slides)
 
 	infoPopup = document.getElementById("info-popup")
 	var infotext = (lang = "de") ? infotext_de : infotext_en;
@@ -363,14 +363,18 @@ function closemyPopup(){
 
 
 // detect desktop
-//var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+var	imgWidth = window.innerWidth
+isMobile = (imgWidth <= 600)
+
 
 
 // init swiper
 const swiper = new Swiper('.swiper-container', {
 	// Optional parameters
 	direction: 'horizontal',
-	cssMode: true,
+	cssMode: isMobile? true:  false,
+	loop: true,
+	//touchMoveStopPropagation: true,
   });
 
 
