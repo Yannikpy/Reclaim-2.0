@@ -385,7 +385,6 @@ const swiper = new Swiper('.swiper-container', {
 	cssMode: isMobile? true:  false,
 	loop: true,
 	longSwipes: false,
-	touchMoveStopPropagation: true,
   });
 
 
