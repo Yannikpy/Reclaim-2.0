@@ -379,7 +379,7 @@ const swiper = new Swiper('.swiper-container', {
 	direction: 'horizontal',
 	cssMode: isMobile? true:  false,
 	loop: true,
-	longswipes: false,
+	longSwipes: false,
 	touchMoveStopPropagation: true,
   });
 
