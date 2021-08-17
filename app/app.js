@@ -5,10 +5,7 @@ var n = 0;
 // check if artwork name is given in 
 const queryString = location.search;
 const urlParams = new URLSearchParams(queryString);
-artwork = urlParams.get('id') ;
-if (artwork) {
-	console.log("hier würde "+ id +" angezeigt")
-}
+artwork_qr = urlParams.get('id') ;
 
 
 // init map
@@ -39,11 +36,10 @@ ext: 'png',
 const mapContainer = map.getContainer();
 const logoBtn = document.getElementById('logoBtn'); 
 mapContainer.appendChild(logoBtn);
-const infoBtn = document.getElementById('infoBtn'); 
-mapContainer.appendChild(infoBtn);
 const langBtn = document.getElementById('langBtn'); 
 mapContainer.appendChild(langBtn);
 // add event listener
+const infoBtn = document.getElementById('infoBtn'); 
 infoBtn.addEventListener('click', infoPopup);
 langBtn.addEventListener('click', changeLang);
 
@@ -154,18 +150,18 @@ map.on('zoomend', function() {
 
 // init info pupup
 function infoPopup() {
-	lang = document.getElementById('langBtn').innerHTML
-	infotext = (lang =="en") ? infotext_de : infotext_en;
-
+	document.getElementById('info-popup').style.display = "block";
 }
 
 
 // function to change language
 function changeLang() {
+	_n = swiper.realIndex
 	lang = document.getElementById('langBtn').innerHTML
 	lang = (lang == "de") ? "en" : "de";
 	document.getElementById('langBtn').innerHTML = lang
 	initMarkers(lang)
+	swiper.slideTo(_n, 0, false)
 		
 }
 
@@ -209,7 +205,7 @@ function initMarkers(lang) {
 	var	imgWidth = window.innerWidth
 	isMobile = (imgWidth <= 600)
 	
-	
+	swiper.removeAllSlides();
 	markers.clearLayers();
 	route = [];
 	slides = [];
@@ -221,9 +217,12 @@ function initMarkers(lang) {
 			marker.type = "station"
 			route.push(marker);	
 			content = document.getElementById('myStationTemplate').innerHTML
-			content = content.replace("_text_", loc.text_de)
+			content = content.replace("_text_", lang == "de" ? loc.text_de: loc.text_en)
 			content = content.replace("_title_", loc.title)
 			slides.push(content)
+			}
+			else {
+				i--;
 			}
 			
 			
@@ -235,15 +234,37 @@ function initMarkers(lang) {
 			marker.on('click', openmyPopup)
 			markers.addLayer(marker)
 			route.push(marker);
+	
+			if (lang=="de"){
+				var content = createContent(loc.order, loc.id, loc.artist, loc.title, loc.text_de, loc.info_de, loc.insta, loc.website, isMobile)
+			}
+			else {
+				var content = createContent(loc.order, loc.id, loc.artist, loc.title, loc.text_en, loc.info_en, loc.insta,loc.website, isMobile)
+			}
 			
-			var content = createContent(loc.order, loc.id, loc.artist, loc.title, loc.text_de, loc.info_de, "", "", isMobile)
 			slides.push(content)
+			if (artwork_qr == loc.id){
+				n = i 
+			}
 		}
 
 		i++;
 	}
 
 	swiper.addSlide(1, slides)
+
+	infoPopup = document.getElementById("info-popup")
+	var infotext = (lang = "de") ? infotext_de : infotext_en;
+	content = infoPopup.innerHTML
+	content = content.replace("_title_", infotext.title)
+	content = content.replace("_text1_", infotext.text1)
+	content = content.replace("_text2_", infotext.text2)
+	content = content.replace("_text3_", infotext.text3)
+	infoPopup.innerHTML = content
+
+	
+
+
 	//eventlisteners
 	var buttons = document.querySelectorAll(".closeBtn")
 	for (const button of buttons){
@@ -261,7 +282,6 @@ function initMarkers(lang) {
 	for (const button of buttons){
 		button.addEventListener('click', e => swiper.slideNext())
 	}
-	
 
 	
 	if (isMobile){
@@ -280,10 +300,11 @@ function initMarkers(lang) {
 	else {
 		var imgHeight = document.querySelector(".image").style.height
 		var buttons = document.querySelectorAll(".audioAndXBox")
-
 	}
-	
-	
+	if (artwork_qr){
+		document.getElementById('swiper-container').style.visibility = "visible";
+		swiper.slideTo(n, 0, false)
+	}
 }
 
 
@@ -314,22 +335,30 @@ function openmyPopup(e){
 }
 
 function closemyPopup(){
-	slide = document.querySelector('.swiper-slide-active')
-	slide.querySelector('.image').style.transition = "0s";
-
-	document.getElementById('swiper-container').style.visibility = "hidden";
-	
-	//center view over target
-	marker = route[n]
-	let xy = marker.getLatLng();
-	map.setView(L.latLng(xy.lat, xy.lng), 17, {animate:true, duration:0.6});
-
-	if (route[n].type == "art") {
-		route[n].setIcon(pointIcon)
+	if   (document.getElementById('info-popup').style.display == "block"){
+		document.getElementById('info-popup').style.display = "none";
+		
 	}
+	else if (document.getElementById('swiper-container').style.visibility == "visible"){
+		slide = document.querySelector('.swiper-slide-active')
+		slide.querySelector('.image').style.transition = "0s";
+		document.getElementById('swiper-container').style.visibility = "hidden";
+		//center view over target
+		marker = route[n]
+		let xy = marker.getLatLng();
+		map.setView(L.latLng(xy.lat, xy.lng), 17, {animate:true, duration:0.6});
 
-	audio.pause();
-	audioPlaying = false;
+		if (route[n].type == "art") {
+			route[n].setIcon(pointIcon)
+		}
+
+		audio.pause();
+		audioPlaying = false;
+	}
+	
+	
+	
+	
 }
 
 
@@ -341,7 +370,6 @@ function closemyPopup(){
 const swiper = new Swiper('.swiper-container', {
 	// Optional parameters
 	direction: 'horizontal',
-	loop: true,  
   });
 
 
