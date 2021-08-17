@@ -129,6 +129,7 @@ z-index: 200 !important;
 
 /*Pop up*/
 .my-popup {
+    overflow: hidden;
     position: absolute;
     left: 0;
     right: 0;

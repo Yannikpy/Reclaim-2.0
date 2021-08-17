@@ -363,7 +363,13 @@ function closemyPopup(){
 	
 	
 }
-
+myWay = ""
+map.on('click', function(e){
+	var coord = e.latlng;
+	var lat = coord.lat;
+	var lng = coord.lng;
+	myWay = myWay + "[" + lat+"," + lng+"],"
+	});
 
 
 
@@ -381,7 +387,8 @@ const swiper = new Swiper('.swiper-container', {
 
 swiper.on('slideChange', function () {
 		//console.log("prev:" + n)
-
+		console.log(myWay.toString())
+		myWay = ""
 		
 		if (document.getElementById('swiper-container').style.visibility == "visible") {
 			//make previus point smaller and set bigIcon for new point
