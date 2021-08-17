@@ -5,8 +5,7 @@
 }
 
 @font-face {
-    font-family:  'Lausanne';
-    font-weight: italic;
+    font-family:  'Lausanne Italic';
     src: url("../fonts/Lausanne-300Italic.woff") format("woff"), url("../fonts/Lausanne-300Italic.ttf")  format("truetype"), url('../fonts/Lausanne-300Italic.woff2') format('woff2');
 }
 
@@ -40,6 +39,7 @@ p3 {
 }
 
 p4 {
+    font-family: 'Lausanne Italic';
     color: black;
     font-size: 1.3em;
     line-height: 1;
@@ -179,7 +179,7 @@ z-index: 200 !important;
 
 .image-container {
 overflow: hidden ;
-
+border: 4px solid black;
 margin-top: 15px;
 text-align: center;
 }
@@ -187,6 +187,7 @@ text-align: center;
 
 .image {
     width: 100%;
+    
     height: 100%;
     opacity: 0.3;
     -webkit-filter: blur(8px); /* Safari 6.0 - 9.0 */
@@ -381,7 +382,6 @@ font-size: 14px;
         opacity: 1;
         -webkit-filter: blur(0px); /* Safari 6.0 - 9.0 */
         filter: blur(0px);
-        border-bottom: 5px solid black;
         margin: 0;
     }
     
@@ -417,10 +417,17 @@ font-size: 14px;
         -ms-overflow-style: none;  /* Internet Explorer 10+ */
         scrollbar-width: none;  /* Firefox */
     }
+    .my-content-box::-webkit-scrollbar { 
+        display: none;  /* Safari and Chrome */
+    }
+
+
     .my-content-desktop {
         margin-left: 15px;
         margin-right: 15px;;
     }
+
+
     .audioAndXBox{
         position: absolute;
         top: 15px;

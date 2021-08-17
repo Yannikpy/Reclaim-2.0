@@ -66,7 +66,15 @@ var pointIconL = L.icon({
 latlngs_for_Polyline = [];
 route = [];
 for (const loc of locations) {
-			latlngs_for_Polyline.push(loc.location);
+			if (loc.artist == "route") {
+				for (const xy of loc.location) {
+					latlngs_for_Polyline.push(xy);
+				}
+			}
+			else {
+				latlngs_for_Polyline.push(loc.location);
+			}
+			
 }
 var polyline = L.polyline(latlngs_for_Polyline, {className: 'my_polyline'}).addTo(map);
 
@@ -163,9 +171,9 @@ function infoPopup() {
 function changeLang() {
 	_n = swiper.realIndex
 	lang = document.getElementById('langBtn').innerHTML
-	lang = (lang == "de") ? "en" : "de";
-	document.getElementById('langBtn').innerHTML = lang
 	initMarkers(lang)
+	document.getElementById('langBtn').innerHTML = (lang == "de") ? "en" : "de";
+
 	swiper.slideTo(_n, 0, false)
 		
 }
@@ -231,7 +239,9 @@ function initMarkers(lang) {
 			
 			
 		}
-		else { // these are points
+		else if (loc.artist == "route") {i-- }
+		else {
+			// these are points
 			var marker = L.marker(loc.location, {icon: pointIcon}).addTo(map)
 			marker.id = i;
 			marker.type = "art"
@@ -248,7 +258,7 @@ function initMarkers(lang) {
 			slides.push(content)
 			if (artwork_qr == loc.id){
 				n = i 
-			}
+		}
 		}
 
 		i++;
@@ -257,11 +267,12 @@ function initMarkers(lang) {
 	swiper.addSlide(1, slides)
 
 	infoPopup = document.getElementById("info-popup")
-	var infotext = (lang = "de") ? infotext_de : infotext_en;
+	var infotext = (lang == "de") ? infotext_de : infotext_en;
 	content = infoPopup.innerHTML
 	content = content.replace("_title_", infotext.title)
 	content = content.replace("_text1_", infotext.text1)
 	content = content.replace("_text2_", infotext.text2)
+	content = content.replace("_donate_", (lang = "de") ? "Spende" : "Donation")
 	content = content.replace("_text3_", infotext.text3)
 	infoPopup.innerHTML = content
 
@@ -363,13 +374,7 @@ function closemyPopup(){
 	
 	
 }
-myWay = ""
-map.on('click', function(e){
-	var coord = e.latlng;
-	var lat = coord.lat;
-	var lng = coord.lng;
-	myWay = myWay + "[" + lat+"," + lng+"],"
-	});
+
 
 
 
@@ -387,8 +392,7 @@ const swiper = new Swiper('.swiper-container', {
 
 swiper.on('slideChange', function () {
 		//console.log("prev:" + n)
-		console.log(myWay.toString())
-		myWay = ""
+
 		
 		if (document.getElementById('swiper-container').style.visibility == "visible") {
 			//make previus point smaller and set bigIcon for new point
