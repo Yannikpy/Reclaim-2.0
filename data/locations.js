@@ -17,6 +17,80 @@ const locations =
     ]
   },
   {
+    "order": "",
+    "info_de": "",
+    "info_en": "",
+    "artist": "route",
+    "title": "",
+    "text_de": "",
+    "text_en": "",
+    "id": "",
+    "insta": "",
+    "website": "",
+    "location": [
+      [
+        50.952195500216156,
+        6.918642818927766
+      ],
+      [
+        50.95211270447952,
+        6.918591856956482
+      ],
+      [
+        50.95208059997054,
+        6.91842019557953
+      ],
+      [
+        50.95204004687485,
+        6.918345093727113
+      ],
+      [
+        50.9520214600275,
+        6.918202936649323
+      ],
+      [
+        50.95196569944086,
+        6.91766917705536
+      ],
+      [
+        50.951938663980826,
+        6.917403638362885
+      ],
+      [
+        50.95190317991569,
+        6.917062997817994
+      ],
+      [
+        50.95183559114521,
+        6.916491687297822
+      ],
+      [
+        50.951783209780466,
+        6.916033029556275
+      ],
+      [
+        50.951729138632366,
+        6.915450990200043
+      ],
+      [
+        50.95158213238052,
+        6.91529542207718
+      ],
+      [
+        50.95157199400116,
+        6.915236413478852
+      ],
+      [
+        50.95142667698763,
+        6.91529542207718
+      ],
+      [
+        50.95151285341095,
+        6.9159042835235605
+      ]
+    ]
+  },
+  {
     "order": 2,
     "info_de": "Auf Gleis 4",
     "info_en": "On plattform 4",
@@ -28,28 +102,12 @@ const locations =
     "insta": "https://www.instagram.com/e_withstandley",
     "website": "https://www.withstandley.com/index.html",
     "location": [
-      50.9515746184,
-      6.9165236562
+      50.95156354535005,
+      6.916443407535554
     ]
   },
   {
     "order": 3,
-    "info_de": "Auf Gleis 3",
-    "info_en": "On plattform 3",
-    "artist": "Natalia Ershova",
-    "title": "Journey to the edge of the room",
-    "text_de": "Natalia Ershovas fotografische Arbeit Journey to the edge of the room zeigt Menschen in ihrer russischen Heimat, die ihre soziale Identität innerhalb ihrer eigenen vier Wände konstruieren. Das Haus kaum verlassend, zu Hause arbeitend, oder unterstützt von Verwandten, leben die Protagonist:innen ihrer Bilder, zurückgezogen. Der Raum in dem sie sich entfalten, soziale Kontakte haben, ist fast ausschliesslich digital. Was steckt hinter diesem Rückzug aus dem öffentlichen Leben? Was steckt hinter dieser selbstgewählten Isolation? Diese Formen der modernen Einsiedelei nehmen in Großstädten weltweit zu. Die Internetabhängigkeit nimmt weltweit zu. Von Menschen umgeben, digital mit ihnen vernetzt und trotzdem vereinsamt. Ein Phänomen unserer Zeit, welches Natalia Ershova in ihren Kaleidoskopen der Einsamkeit einfühlsam thematisiert.",
-    "text_en": "Natalia Ershova’s photographic work Journey to the edge of the room depicts people in her native Russia who construct their social identity within their own four walls. Rarely leaving the house, working from home, or supported by relatives, her image’s protagonists live reclusively. The space in which they flourish, have social contacts, is almost exclusively digital. What is behind this retreat from public life? What is behind this self-elected isolation? These forms of modern hermithood are growing in cities worldwide. Internet dependency is growing worldwide. Surrounded by people, networked with them digitally and nevertheless isolated. A phenomenon of our times, empathically thematized by Natalia Ershova in her kaleidoscopes of loneliness.",
-    "id": "32-Natalia-Ershova",
-    "insta": "",
-    "website": "",
-    "location": [
-      50.951740606,
-      6.9180137125
-    ]
-  },
-  {
-    "order": 4,
     "info_de": "Auf Gleis 3",
     "info_en": "On plattform 3",
     "artist": "Bonnita Postma",
@@ -62,6 +120,22 @@ const locations =
     "location": [
       50.9515746184,
       6.9165236562
+    ]
+  },
+  {
+    "order": 4,
+    "info_de": "Auf Gleis 3",
+    "info_en": "On plattform 3",
+    "artist": "Natalia Ershova",
+    "title": "Journey to the edge of the room",
+    "text_de": "Natalia Ershovas fotografische Arbeit Journey to the edge of the room zeigt Menschen in ihrer russischen Heimat, die ihre soziale Identität innerhalb ihrer eigenen vier Wände konstruieren. Das Haus kaum verlassend, zu Hause arbeitend, oder unterstützt von Verwandten, leben die Protagonist:innen ihrer Bilder, zurückgezogen. Der Raum in dem sie sich entfalten, soziale Kontakte haben, ist fast ausschliesslich digital. Was steckt hinter diesem Rückzug aus dem öffentlichen Leben? Was steckt hinter dieser selbstgewählten Isolation? Diese Formen der modernen Einsiedelei nehmen in Großstädten weltweit zu. Die Internetabhängigkeit nimmt weltweit zu. Von Menschen umgeben, digital mit ihnen vernetzt und trotzdem vereinsamt. Ein Phänomen unserer Zeit, welches Natalia Ershova in ihren Kaleidoskopen der Einsamkeit einfühlsam thematisiert.",
+    "text_en": "Natalia Ershova’s photographic work Journey to the edge of the room depicts people in her native Russia who construct their social identity within their own four walls. Rarely leaving the house, working from home, or supported by relatives, her image’s protagonists live reclusively. The space in which they flourish, have social contacts, is almost exclusively digital. What is behind this retreat from public life? What is behind this self-elected isolation? These forms of modern hermithood are growing in cities worldwide. Internet dependency is growing worldwide. Surrounded by people, networked with them digitally and nevertheless isolated. A phenomenon of our times, empathically thematized by Natalia Ershova in her kaleidoscopes of loneliness.",
+    "id": "32-Natalia-Ershova",
+    "insta": "",
+    "website": "",
+    "location": [
+      50.95173251808097,
+      6.9179266691207895
     ]
   },
   {
@@ -100,6 +174,22 @@ const locations =
     "order": 7,
     "info_de": "Auf Gleis 1",
     "info_en": "On plattform 1",
+    "artist": "CORINNE FHIMA",
+    "title": "EVE ❤ SPORT (Eve loves Sport)",
+    "text_de": "Eve is everywhere. Corinne Fhima erschafft eine surreale Welt rund um den weiblichen Körper. Mit ihrem Alter Ego Eve schreibt sie sich in die unterschiedlichsten Kontexte ein. Collagiert, performed, infiltiert den öffentlichen Raum. In ihrer Arbeit EVE LOVES SPORT zeigt Eve sich als überperformende Nummer eins, die in der sauberen Welt des Sports aller Männlichkeit problemlos trotzt. Eves weiblicher Körper wird zur Superwoman-haften Groteske und verstellt die sie umgebenden Protagonisten zu Statisten ihrer eigenen kapitalistischen Inszenierung. Sie entlarvt mit ihrer eigenen Überinszenierung die eigentliche Inszenierung als absurdes Spektakel einer auf Unterhaltung und Makellosigkeit getrimmten kommerziellen Scheinwelt.",
+    "text_en": "Eve is everywhere. Corinne Fhima creates a surreal world around the female body. She inscribes herself into the most diverse array of contexts with her alter ego Eve. She collages, performs, infiltrates the public space. In her work EVE LOVES SPORT Eve shows herself as an over-performing number 1, effortlessly defying all masculinity in the pristine world of sport. Eve’s female body becomes a Superwoman-like grotesque and distorts the protagonists surrounding her into extras in her own capitalistic staging. With her own excessive staging she exposes the actual staging as an absurd spectacle of a commercial world of make-believe trimmed for entertainment and impeccability.",
+    "id": "09-Corinne-Fhima",
+    "insta": "https://www.instagram.com/corinnefhima/",
+    "website": "https://www.corinnefhima.com",
+    "location": [
+      50.951583822110166,
+      6.917982995510102
+    ]
+  },
+  {
+    "order": 8,
+    "info_de": "Auf Gleis 1",
+    "info_en": "On plattform 1",
     "artist": "Boon Lee",
     "title": "How to cut a cube into sevenths",
     "text_de": "Boon Lees Arbeiten konzentrieren sich in den letzten Jahren, unter anderm aus Umweltaspekten, auf wiederverwertbare Materialien und gefundene Gegenstände. Die von Verpackungsmaterial stammenden Pappen kombiniert Boon Lee in seiner Arbeit  How to cut a cube into sevenths zu einem flächigen Werk, das ein würfelförmiges Gebilde zeigt. Die vorhandenen Strukturen aggregiert er mit geschickten Schnitten zu sieben gleichen Teilvolumen, die die Illusion dieses Körpers erzeugen. Des Weitern verdichtet und dekontextualisiert er die angeschnittenen kommerziellen Zeichen und Logos des Verpackungsmaterials zu einem vielschichtigen, die Mechanismen der Werbung zersetzenden, Kunstwerk mit hoher illustrativer Qualität.",
@@ -110,22 +200,6 @@ const locations =
     "location": [
       50.9514332237,
       6.9165692804
-    ]
-  },
-  {
-    "order": 8,
-    "info_de": "Auf Gleis 1",
-    "info_en": "On plattform 1",
-    "artist": "CORINNE FHIMA",
-    "title": "EVE ❤ SPORT (Eve loves Sport)",
-    "text_de": "Eve is everywhere. Corinne Fhima erschafft eine surreale Welt rund um den weiblichen Körper. Mit ihrem Alter Ego Eve schreibt sie sich in die unterschiedlichsten Kontexte ein. Collagiert, performed, infiltiert den öffentlichen Raum. In ihrer Arbeit EVE LOVES SPORT zeigt Eve sich als überperformende Nummer eins, die in der sauberen Welt des Sports aller Männlichkeit problemlos trotzt. Eves weiblicher Körper wird zur Superwoman-haften Groteske und verstellt die sie umgebenden Protagonisten zu Statisten ihrer eigenen kapitalistischen Inszenierung. Sie entlarvt mit ihrer eigenen Überinszenierung die eigentliche Inszenierung als absurdes Spektakel einer auf Unterhaltung und Makellosigkeit getrimmten kommerziellen Scheinwelt.",
-    "text_en": "Eve is everywhere. Corinne Fhima creates a surreal world around the female body. She inscribes herself into the most diverse array of contexts with her alter ego Eve. She collages, performs, infiltrates the public space. In her work EVE LOVES SPORT Eve shows herself as an over-performing number 1, effortlessly defying all masculinity in the pristine world of sport. Eve’s female body becomes a Superwoman-like grotesque and distorts the protagonists surrounding her into extras in her own capitalistic staging. With her own excessive staging she exposes the actual staging as an absurd spectacle of a commercial world of make-believe trimmed for entertainment and impeccability.",
-    "id": "09-Corinne-Fhima",
-    "insta": "https://www.instagram.com/corinnefhima/",
-    "website": "https://www.corinnefhima.com",
-    "location": [
-      50.9515906152,
-      6.9180545488
     ]
   },
   {
@@ -140,8 +214,8 @@ const locations =
     "insta": "https://www.instagram.com/ortproject/",
     "website": "https://www.ortproject.com",
     "location": [
-      50.9514332237,
-      6.9165692804
+      50.951416538574406,
+      6.916472911834718
     ]
   },
   {
@@ -158,6 +232,56 @@ const locations =
     "location": [
       50.9513051057,
       6.9157055823
+    ]
+  },
+  {
+    "order": "",
+    "info_de": "",
+    "info_en": "",
+    "artist": "route",
+    "title": "",
+    "text_de": "",
+    "text_en": "",
+    "id": "",
+    "insta": "",
+    "website": "",
+    "location": [
+      [
+        50.95121545958807,
+        6.915732622146607
+      ],
+      [
+        50.95117152624838,
+        6.915282011032105
+      ],
+      [
+        50.951103936413894,
+        6.915206909179688
+      ],
+      [
+        50.95084371463347,
+        6.915641427040101
+      ],
+      [
+        50.95067135914571,
+        6.91592574119568
+      ],
+      [
+        50.95045506900188,
+        6.916263699531556
+      ],
+      [
+        50.95027257341011,
+        6.9165265560150155
+      ],
+      [
+        50.95019484358861,
+        6.916483640670777
+      ],
+      [
+        50.94995320440034,
+        6.916204690933228
+      ]
     ]
   },
   {
@@ -241,6 +365,64 @@ const locations =
     ]
   },
   {
+    "order": "",
+    "info_de": "",
+    "info_en": "",
+    "artist": "route",
+    "title": "",
+    "text_de": "",
+    "text_en": "",
+    "id": "",
+    "insta": "",
+    "website": "",
+    "location": [
+      [
+        50.94986702508523,
+        6.91592037677765
+      ],
+      [
+        50.94980281294262,
+        6.916071921586991
+      ],
+      [
+        50.950016571441864,
+        6.9163160026073465
+      ],
+      [
+        50.95023624318364,
+        6.916554719209672
+      ],
+      [
+        50.950290316068525,
+        6.916641891002656
+      ],
+      [
+        50.950350303101615,
+        6.916794776916505
+      ],
+      [
+        50.9505429369942,
+        6.917001307010651
+      ],
+      [
+        50.950693326057134,
+        6.917147487401963
+      ],
+      [
+        50.950979739836804,
+        6.91722258925438
+      ],
+      [
+        50.950928202384254,
+        6.917360723018647
+      ],
+      [
+        50.95097044620206,
+        6.917245388031007
+      ]
+    ]
+  },
+  {
     "order": 16,
     "info_de": "",
     "info_en": "",
@@ -262,7 +444,7 @@ const locations =
     "info_en": "",
     "artist": "Dane Palmieri",
     "title": "your wounds are showing",
-    "text_de": "Ab hier folgst du der Ludolf-Camphausen-Straße bis du die Vogelsanger Straße kreuzt und direkt die ersten Plakate siehst.",
+    "text_de": "Your wounds are showing ist Teil eines fortlaufenden Projekts über die Bedeutung von Objekten und ihrer Erhaltung. Palmieris digitale Collage besteht aus neun Detailansichten einer Gipsnachbildung Jungfrau und Kind aus dem frühen 20. Jahrhundert, welche Antonio Rosselino zugeschrieben wird. Dieser Gipsabdruck ist Gegenstand seines ererbten Besitzes. Die Arbeit ist somit auch eine Auseinandersetzung mit seinem persönlichen Erbe und dem Erbe der Kultur im Allgemeinen. Grün hervorgehoben sind Risse und Beschädigungen, Spuren des ständigen Nachbesserns und Ausgleichens. Diese lebenslangen Einschreibungen dokumentieren nicht nur die fortwährende Zerbrechlichkeit dieses Objekts, sondern zeigen auch mit welchem Aufwand und Engagement für die Erhaltung von kulturell relevanten Objekten gearbeitet werden muss.",
     "text_en": "Your wounds are showing is part of an ongoing project on the meaning of objects and their preservation. Palmieri’s digital collage consists of nine detailed views of a reproduction plaster Virgin and Child from the 20th century, which is ascribed to Antonio Rossellino. Palmieri inherited this plaster cast. Therefore, the work is also an examination of his personal inheritance and of the inheritance of culture in general. Highlighted in green are cracks and damage, traces of constant repairs and adjustments. These lifelong inscriptions not only document this object’s perpetual fragility, but also demonstrate the effort and commitment that go into preserving culturally relevant objects.",
     "id": "11-Dane-Palmieri",
     "insta": "https://www.instagram.com/dane_palmieri",
@@ -270,6 +452,40 @@ const locations =
     "location": [
       50.9510227227,
       6.9173411094
+    ]
+  },
+  {
+    "order": "",
+    "info_de": "",
+    "info_en": "",
+    "artist": "route",
+    "title": "",
+    "text_de": "",
+    "text_en": "",
+    "id": "",
+    "insta": "",
+    "website": "",
+    "location": [
+      [
+        50.9509805847126,
+        6.917419731616975
+      ],
+      [
+        50.95146723061852,
+        6.917977631092072
+      ],
+      [
+        50.95149088688686,
+        6.918117105960847
+      ],
+      [
+        50.951475679287164,
+        6.918213665485383
+      ],
+      [
+        50.951487507420694,
+        6.918441653251649
+      ]
     ]
   },
   {
@@ -284,6 +500,19 @@ const locations =
     "insta": "",
     "website": "",
     "location": [50.950032, 6.916579]
+  },
+  {
+    "order": "",
+    "info_de": "",
+    "info_en": "",
+    "artist": "route",
+    "title": "",
+    "text_de": "",
+    "text_en": "",
+    "id": "",
+    "insta": "",
+    "website": "",
+    "location": [[50.943284, 6.933427]]
   },
   {
     "order": 18,
@@ -334,7 +563,57 @@ const locations =
     ]
   },
   {
+    "order": "",
+    "info_de": "",
+    "info_en": "",
+    "artist": "route",
+    "title": "",
+    "text_de": "",
+    "text_en": "",
+    "id": "",
+    "insta": "",
+    "website": "",
+    "location": [
+      [
+        50.94314539121675,
+        6.9336940348148355
+      ],
+      [
+        50.94303638374036,
+        6.933927386999131
+      ],
+      [
+        50.942917235741234,
+        6.934194266796113
+      ],
+      [
+        50.942801467534736,
+        6.9343914091587076
+      ],
+      [
+        50.94272119014199,
+        6.9345536828041086
+      ]
+    ]
+  },
+  {
     "order": 21,
+    "info_de": "",
+    "info_en": "",
+    "artist": "Christian Hiadzi",
+    "title": "All and beyond",
+    "text_de": "Christian Hiadzis in kraftvollen Farben gehaltene Malerei ist inspiriert von den menschlichen Erfahrungen die wir erleben: Glück, Schmerz, Angst, Tod. Als empfindsame Wesen müssen wir mit all diesen Erfahrungen umgehen und Sie als Erlebtes in uns integrieren. Das kann mit großen Widerständen verbunden sein, denn gerade negative Erfahrungen lassen sich nur schwer verarbeiten. Die mystische und eindringliche Natur Hiadzis Gemäldes legt jedoch nahe, dass wir in der Lage sind alle Widerstände mit unseren natürlichen Kraftquellen zu überwinden und an all diesen Erfahrungen wachsen können.",
+    "text_en": "Christian Hiadzi’s boldly coloured painting is inspired by the human experiences we go through: happiness, pain, fear, death. As sensitive beings we are obliged to cope with all these experiences and incorporate them into ourselves as our past. This can be associated with enormous pushback, for precisely negative experiences are hard to process. The mystical and haunting nature featured in Hiadzi’s painting suggests, however, that we are capable of overcoming all the pushback with our natural sources of strength and growing by all these experiences.",
+    "id": "08-Christian-Hiadzi",
+    "insta": "https://www.instagram.com/christianhiadzi_art",
+    "website": "https://www.studiohiadzi.co.uk",
+    "location": [
+      50.9424021916,
+      6.9350284338
+    ]
+  },
+  {
+    "order": 22,
     "info_de": "",
     "info_en": "",
     "artist": "Emily Weiskopf",
@@ -350,7 +629,7 @@ const locations =
     ]
   },
   {
-    "order": 22,
+    "order": 23,
     "info_de": "",
     "info_en": "",
     "artist": "Wiebke Meischner <br> & Eleonora Arnold",
@@ -363,22 +642,6 @@ const locations =
     "location": [
       50.9424030337,
       6.9349191338
-    ]
-  },
-  {
-    "order": 23,
-    "info_de": "",
-    "info_en": "",
-    "artist": "Christian Hiadzi",
-    "title": "All and beyond",
-    "text_de": "Christian Hiadzis in kraftvollen Farben gehaltene Malerei ist inspiriert von den menschlichen Erfahrungen die wir erleben: Glück, Schmerz, Angst, Tod. Als empfindsame Wesen müssen wir mit all diesen Erfahrungen umgehen und Sie als Erlebtes in uns integrieren. Das kann mit großen Widerständen verbunden sein, denn gerade negative Erfahrungen lassen sich nur schwer verarbeiten. Die mystische und eindringliche Natur Hiadzis Gemäldes legt jedoch nahe, dass wir in der Lage sind alle Widerstände mit unseren natürlichen Kraftquellen zu überwinden und an all diesen Erfahrungen wachsen können.",
-    "text_en": "Christian Hiadzi’s boldly coloured painting is inspired by the human experiences we go through: happiness, pain, fear, death. As sensitive beings we are obliged to cope with all these experiences and incorporate them into ourselves as our past. This can be associated with enormous pushback, for precisely negative experiences are hard to process. The mystical and haunting nature featured in Hiadzi’s painting suggests, however, that we are capable of overcoming all the pushback with our natural sources of strength and growing by all these experiences.",
-    "id": "08-Christian-Hiadzi",
-    "insta": "https://www.instagram.com/christianhiadzi_art",
-    "website": "https://www.studiohiadzi.co.uk",
-    "location": [
-      50.9424021916,
-      6.9350284338
     ]
   },
   {
@@ -430,6 +693,48 @@ const locations =
     ]
   },
   {
+    "order": "",
+    "info_de": "",
+    "info_en": "",
+    "artist": "route",
+    "title": "",
+    "text_de": "",
+    "text_en": "",
+    "id": "",
+    "insta": "",
+    "website": "",
+    "location": [
+      [
+        50.941508562138154,
+        6.9338053464889535
+      ],
+      [
+        50.94188714208138,
+        6.934223771095277
+      ],
+      [
+        50.94186686109112,
+        6.934336423873902
+      ],
+      [
+        50.94210347209348,
+        6.934583187103272
+      ],
+      [
+        50.94246176646187,
+        6.9350284337997445
+      ],
+      [
+        50.94222177714308,
+        6.935425400733949
+      ],
+      [
+        50.942005447681446,
+        6.935269832611085
+      ]
+    ]
+  },
+  {
     "order": 27,
     "info_de": "",
     "info_en": "",
@@ -462,6 +767,60 @@ const locations =
     ]
   },
   {
+    "order": "",
+    "info_de": "",
+    "info_en": "",
+    "artist": "route",
+    "title": "",
+    "text_de": "",
+    "text_en": "",
+    "id": "",
+    "insta": "",
+    "website": "",
+    "location": [
+      [
+        50.9418854519992,
+        6.935210824012756
+      ],
+      [
+        50.941398705774006,
+        6.934886276721955
+      ],
+      [
+        50.94136490376358,
+        6.9348540902137765
+      ],
+      [
+        50.94119420323556,
+        6.934776306152344
+      ],
+      [
+        50.94116040107649,
+        6.93475753068924
+      ],
+      [
+        50.941035332874165,
+        6.934451758861543
+      ],
+      [
+        50.94061618293225,
+        6.933453977108003
+      ],
+      [
+        50.940426888171565,
+        6.932953745126725
+      ],
+      [
+        50.940258719411815,
+        6.932594329118729
+      ],
+      [
+        50.940209705286954,
+        6.932426691055299
+      ]
+    ]
+  },
+  {
     "order": 29,
     "info_de": "",
     "info_en": "",
@@ -481,52 +840,20 @@ const locations =
     "order": 30,
     "info_de": "",
     "info_en": "",
-    "artist": "Klaus Frahm",
-    "title": "4409 W. Pico Blvd., <br> Los Angeles, 2019",
-    "text_de": "Billboard auf Billboard. Klaus Frahms Motiv aus seiner Serie Twentysix Billboards, die er 2019 in Los Angeles fotografierte, zeigt nicht das Billboard in seiner eigentlichen Charakteristik, sondern eine Rückansicht. Er akzentuiert entsprechend das Gestell auf dem die eigentliche Fläche montiert ist. Diese Perspektive erlaubt Ihm nicht nur den Sinn dieser Konstruktion offen zu lassen, sondern diese auch in Gänze in Frage zu stellen. Mit seinem »verkehrt« typologischen Blick wendet er sich bewusst von den laut schreienden Inhalten ab und der zu infiltrierenden Umgebung zu. Ob die Lust auf Reklame hat?",
-    "text_en": "Billboard on billboard. Klaus Frahm’s motif from his series Twentysix Billboards, which he photographed in Los Angeles in 2019, portrays not the billboard as it actually appears to us, but a rear view of it. This perspective allows him not only to leave the meaning of this construction open, but also to question it entirely. With his “kooky” typological gaze he consciously turns away from the shrill content and towards the surrounding area to be infiltrated. Will the surroundings welcome the ads?",
-    "id": "28-Klaus-Frahm",
-    "insta": "https://www.instagram.com/klaus.frahm/",
-    "website": "https://klaus-frahm.de",
+    "artist": "Sabine Hertig",
+    "title": "Ohne Titel, 2013",
+    "text_de": "Das künstlerische Medium von Sabine Hertig (*1982, Schweiz) ist die analoge Collage. Seit nunmehr 10 Jahren sammelt sie obsessiv Bilder aus klassischen Printmedien und sucht neue Bildzusammenhänge. Diese künstlerische Aneignung bedeutet für sie Verfremdung und Bewahrung zugleich: »Es ist die Faszination am Bild an sich, die mich antreibt, mich in diesen Bilderfluss zu begeben und auf ihn zu reagieren. Es ist auch der Versuch, den historischen, archivierten Bildern wieder einen Wert zurückzugeben, indem sie in ein neues Ganzes eingebunden und damit in eine Zeitgenossenschaft geführt werden.«",
+    "text_en": "The artistic medium of Sabine Hertig (*1982 in CH) is analogue collage. For 10 years now she has been obsessively collecting images from traditional print media and seeking new visual nexuses. To her, this artistic appropriation signifies alienation and preservation simultaneously: “It is fascination with the image in itself that drives me to enter this flow of images and react to it. It is also the attempt to restore value to the historical, archived images by incorporating them into a new whole and hence leading them into contemporaneity.”",
+    "id": "39-Sabine-Hertig",
+    "insta": "https://www.instagram.com/sabinehertig_/",
+    "website": "www.sabinehertig.ch",
     "location": [
-      50.9403195637,
-      6.9320062548
+      50.9403735425,
+      6.932409592
     ]
   },
   {
     "order": 31,
-    "info_de": "",
-    "info_en": "",
-    "artist": "Andres de Varona",
-    "title": "To See Myself Alive",
-    "text_de": "Die fotografische Arbeit To See Myself Alive von Andres de Varona zeigt Marcia Reifman, die an Krebs erkrankt war und sich wieder aus dem Schatten, den diese Krankheit auf das Licht des Lebens wirft, befreit hat. Eine Befreiung ohne Gewinner. Die menschliche Existenz und die mit ihr verbundenen Erfahrungen, von Leid und Todesangst, Heilung und Prüfung werden zum Gegenstand von de Varonas Motiv. Die symbolische Umsetzung dieses Themas gelingt ihr geradezu »atemberaubend«. Alles an diesem Motiv zieht einen mit in das sonnenbestrahlte Erdreich. Zieht ein mit in die psychischen Untiefen, die die Auseinandersetzung mit dem Tod bedeuten. De Varona zeigt ein außergewöhnliches, sowohl menschliches als auch bildnerisches Verständnis für die Direktheit und Brutalität dieser die Existenz gefährdenden Lebensumstände.",
-    "text_en": "The photographic work To See Myself Alive by Andres de Varona depicts Marcia Reifman, who was ill with cancer and freed herself from the shadow cast on the light of life by this disease. A liberation with no winners. Human existence and the experiences associated with it, of suffering and mortal fear, healing and ordeal, become the object of de Varona’s motif. The way de Varona succeeds in symbolically realizing this theme is downright “breathtaking”. Everything about this motif draws us into the sunlit soil. Draws us into the psychic shoals that signify confrontation with death. Da Varona exhibits an extraordinary, both human and creative understanding for the directness and brutality of these existence-endangering life circumstances.",
-    "id": "04-Andres-de-Varona",
-    "insta": "https://www.instagram.com/andres.deva/",
-    "website": "https://www.andresmario.com/contact",
-    "location": [
-      50.9404489648,
-      6.9316835515
-    ]
-  },
-  {
-    "order": 32,
-    "info_de": "",
-    "info_en": "",
-    "artist": "Freya Hattenberger",
-    "title": "STELL DIR VOR, ES IST <br> LOCKDOWN UND ALLE <br> POSTEN YOGA-VIDEOS",
-    "text_de": "In Freya Hattenbergers Arbeit STELL DIR VOR, ES IST LOCKDOWN UND ALLE POSTEN YOGA-VIDEOS werden Körpererfahrungen und emotionale Zustände während der Selbstisolation in Bildsprache übersetzt. Hattenberger geht es dabei um den Rückkopplungseffekt und die Erfahrung eines Drinnen und Draussen: Sie möchte öffentlich machen, was als internes System wirkt. Die Übergänge vom Öffentlichen ins Private sind mit der medialen Durchdringung des Alltags durchgängiger denn je. Formal stellt die Arbeit Typologien des Körpers dar und unterstreicht seine Zeichenhaftigkeit. Der Körper kommuniziert performativ mit dem Stadtraum und tritt in einen neuen Dialog. Die Sloganhaftigkeit der »Selbsterleuchtung« ist von ihrem vermeintlich spirituellen Kontext gelöst und wird dadurch als neoliberale Plattitüde lesbar.",
-    "text_en": "In Freya Hattenberger’s work “Imagine it’s Lockdown and everyone is posting yoga-videos”, physical experiences and emotional states during self-isolation are translated into visual language. Hattenberger’s concern along the way is the feedback effect and the experience of an inside and outside: she intends to publicize what functions as an internal system. The transitions from the public to the private are more continuous than ever with the media pervasion of everyday life. Formally, the work depicts typologies of the body and underlines its symbolism. The body communicates performatively with the urban space and enters into a new dialogue. The slogans of “self-enlightenment” are detached from their allegedly spiritual context and become legible as neoliberal platitudes as a result.",
-    "id": "16-Freya-Hattenberger",
-    "insta": "https://www.instagram.com/freya_hattenberger",
-    "website": "www.freyahattenberger.de",
-    "location": [
-      50.9405502671,
-      6.9317670353
-    ]
-  },
-  {
-    "order": 33,
     "info_de": "",
     "info_en": "",
     "artist": "Kehan Lai",
@@ -542,19 +869,101 @@ const locations =
     ]
   },
   {
+    "order": 32,
+    "info_de": "",
+    "info_en": "",
+    "artist": "Klaus Frahm",
+    "title": "4409 W. Pico Blvd., <br> Los Angeles, 2019",
+    "text_de": "Billboard auf Billboard. Klaus Frahms Motiv aus seiner Serie Twentysix Billboards, die er 2019 in Los Angeles fotografierte, zeigt nicht das Billboard in seiner eigentlichen Charakteristik, sondern eine Rückansicht. Er akzentuiert entsprechend das Gestell auf dem die eigentliche Fläche montiert ist. Diese Perspektive erlaubt Ihm nicht nur den Sinn dieser Konstruktion offen zu lassen, sondern diese auch in Gänze in Frage zu stellen. Mit seinem »verkehrt« typologischen Blick wendet er sich bewusst von den laut schreienden Inhalten ab und der zu infiltrierenden Umgebung zu. Ob die Lust auf Reklame hat?",
+    "text_en": "Billboard on billboard. Klaus Frahm’s motif from his series Twentysix Billboards, which he photographed in Los Angeles in 2019, portrays not the billboard as it actually appears to us, but a rear view of it. This perspective allows him not only to leave the meaning of this construction open, but also to question it entirely. With his “kooky” typological gaze he consciously turns away from the shrill content and towards the surrounding area to be infiltrated. Will the surroundings welcome the ads?",
+    "id": "28-Klaus-Frahm",
+    "insta": "https://www.instagram.com/klaus.frahm/",
+    "website": "https://klaus-frahm.de",
+    "location": [
+      50.9403195637,
+      6.9320062548
+    ]
+  },
+  {
+    "order": 33,
+    "info_de": "",
+    "info_en": "",
+    "artist": "Andres de Varona",
+    "title": "To See Myself Alive",
+    "text_de": "Die fotografische Arbeit To See Myself Alive von Andres de Varona zeigt Marcia Reifman, die an Krebs erkrankt war und sich wieder aus dem Schatten, den diese Krankheit auf das Licht des Lebens wirft, befreit hat. Eine Befreiung ohne Gewinner. Die menschliche Existenz und die mit ihr verbundenen Erfahrungen, von Leid und Todesangst, Heilung und Prüfung werden zum Gegenstand von de Varonas Motiv. Die symbolische Umsetzung dieses Themas gelingt ihr geradezu »atemberaubend«. Alles an diesem Motiv zieht einen mit in das sonnenbestrahlte Erdreich. Zieht ein mit in die psychischen Untiefen, die die Auseinandersetzung mit dem Tod bedeuten. De Varona zeigt ein außergewöhnliches, sowohl menschliches als auch bildnerisches Verständnis für die Direktheit und Brutalität dieser die Existenz gefährdenden Lebensumstände.",
+    "text_en": "The photographic work To See Myself Alive by Andres de Varona depicts Marcia Reifman, who was ill with cancer and freed herself from the shadow cast on the light of life by this disease. A liberation with no winners. Human existence and the experiences associated with it, of suffering and mortal fear, healing and ordeal, become the object of de Varona’s motif. The way de Varona succeeds in symbolically realizing this theme is downright “breathtaking”. Everything about this motif draws us into the sunlit soil. Draws us into the psychic shoals that signify confrontation with death. Da Varona exhibits an extraordinary, both human and creative understanding for the directness and brutality of these existence-endangering life circumstances.",
+    "id": "04-Andres-de-Varona",
+    "insta": "https://www.instagram.com/andres.deva/",
+    "website": "https://www.andresmario.com/contact",
+    "location": [
+      50.9404489648,
+      6.9316835515
+    ]
+  },
+  {
     "order": 34,
     "info_de": "",
     "info_en": "",
-    "artist": "Sabine Hertig",
-    "title": "Ohne Titel, 2013",
-    "text_de": "Das künstlerische Medium von Sabine Hertig (*1982, Schweiz) ist die analoge Collage. Seit nunmehr 10 Jahren sammelt sie obsessiv Bilder aus klassischen Printmedien und sucht neue Bildzusammenhänge. Diese künstlerische Aneignung bedeutet für sie Verfremdung und Bewahrung zugleich: »Es ist die Faszination am Bild an sich, die mich antreibt, mich in diesen Bilderfluss zu begeben und auf ihn zu reagieren. Es ist auch der Versuch, den historischen, archivierten Bildern wieder einen Wert zurückzugeben, indem sie in ein neues Ganzes eingebunden und damit in eine Zeitgenossenschaft geführt werden.«",
-    "text_en": "The artistic medium of Sabine Hertig (*1982 in CH) is analogue collage. For 10 years now she has been obsessively collecting images from traditional print media and seeking new visual nexuses. To her, this artistic appropriation signifies alienation and preservation simultaneously: “It is fascination with the image in itself that drives me to enter this flow of images and react to it. It is also the attempt to restore value to the historical, archived images by incorporating them into a new whole and hence leading them into contemporaneity.”",
-    "id": "39-Sabine-Hertig",
-    "insta": "https://www.instagram.com/sabinehertig_/",
-    "website": "www.sabinehertig.ch",
+    "artist": "Freya Hattenberger",
+    "title": "STELL DIR VOR, ES IST <br> LOCKDOWN UND ALLE <br> POSTEN YOGA-VIDEOS",
+    "text_de": "In Freya Hattenbergers Arbeit STELL DIR VOR, ES IST LOCKDOWN UND ALLE POSTEN YOGA-VIDEOS werden Körpererfahrungen und emotionale Zustände während der Selbstisolation in Bildsprache übersetzt. Hattenberger geht es dabei um den Rückkopplungseffekt und die Erfahrung eines Drinnen und Draussen: Sie möchte öffentlich machen, was als internes System wirkt. Die Übergänge vom Öffentlichen ins Private sind mit der medialen Durchdringung des Alltags durchgängiger denn je. Formal stellt die Arbeit Typologien des Körpers dar und unterstreicht seine Zeichenhaftigkeit. Der Körper kommuniziert performativ mit dem Stadtraum und tritt in einen neuen Dialog. Die Sloganhaftigkeit der »Selbsterleuchtung« ist von ihrem vermeintlich spirituellen Kontext gelöst und wird dadurch als neoliberale Plattitüde lesbar.",
+    "text_en": "In Freya Hattenberger’s work “Imagine it’s Lockdown and everyone is posting yoga-videos”, physical experiences and emotional states during self-isolation are translated into visual language. Hattenberger’s concern along the way is the feedback effect and the experience of an inside and outside: she intends to publicize what functions as an internal system. The transitions from the public to the private are more continuous than ever with the media pervasion of everyday life. Formally, the work depicts typologies of the body and underlines its symbolism. The body communicates performatively with the urban space and enters into a new dialogue. The slogans of “self-enlightenment” are detached from their allegedly spiritual context and become legible as neoliberal platitudes as a result.",
+    "id": "16-Freya-Hattenberger",
+    "insta": "https://www.instagram.com/freya_hattenberger",
+    "website": "www.freyahattenberger.de",
     "location": [
-      50.9403735425,
-      6.932409592
+      50.9405502671,
+      6.9317670353
+    ]
+  },
+  {
+    "order": "",
+    "info_de": "",
+    "info_en": "",
+    "artist": "route",
+    "title": "",
+    "text_de": "",
+    "text_en": "",
+    "id": "",
+    "insta": "",
+    "website": "",
+    "location": [
+      [
+        50.940511394856394,
+        6.931667625904084
+      ],
+      [
+        50.94062463357327,
+        6.931305527687074
+      ],
+      [
+        50.94071759052277,
+        6.930970251560212
+      ],
+      [
+        50.9410319526478,
+        6.931203603744508
+      ],
+      [
+        50.94148828098276,
+        6.93152815103531
+      ],
+      [
+        50.94190911314414,
+        6.931816488504411
+      ],
+      [
+        50.94285723911546,
+        6.932566165924073
+      ],
+      [
+        50.943168206702715,
+        6.932850480079652
+      ],
+      [
+        50.94323918814303,
+        6.933075785636903
+      ]
     ]
   },
   {
@@ -569,6 +978,41 @@ const locations =
     "insta": "",
     "website": "",
     "location": [50.943284, 6.933427]
+  },
+  {
+    "order": "",
+    "info_de": "",
+    "info_en": "",
+    "artist": "route",
+    "title": "",
+    "text_de": "",
+    "text_en": "",
+    "id": "",
+    "insta": "",
+    "website": "",
+    "location": [[50.949079, 6.952367]]
+  },
+  {
+    "order": "",
+    "info_de": "",
+    "info_en": "",
+    "artist": "route",
+    "title": "",
+    "text_de": "",
+    "text_en": "",
+    "id": "",
+    "insta": "",
+    "website": "",
+    "location": [
+      [
+        50.948626701165416,
+        6.950848102569581
+      ],
+      [
+        50.9492215200365,
+        6.95037603378296
+      ]
+    ]
   },
   {
     "order": 35,
@@ -667,6 +1111,44 @@ const locations =
     ]
   },
   {
+    "order": "",
+    "info_de": "",
+    "info_en": "",
+    "artist": "route",
+    "title": "",
+    "text_de": "",
+    "text_en": "",
+    "id": "",
+    "insta": "",
+    "website": "",
+    "location": [
+      [
+        50.950140770592654,
+        6.952650547027589
+      ],
+      [
+        50.950248916521666,
+        6.953219175338746
+      ],
+      [
+        50.94992447797973,
+        6.954549551010133
+      ],
+      [
+        50.950499003018805,
+        6.956298351287843
+      ],
+      [
+        50.950634184348864,
+        6.956448554992677
+      ],
+      [
+        50.95094509991599,
+        6.956813335418702
+      ]
+    ]
+  },
+  {
     "order": 41,
     "info_de": "In der Unterführung",
     "info_en": "In the underpass",
@@ -726,8 +1208,8 @@ const locations =
     "insta": "https://www.instagram.com/heidialmosara/",
     "website": "https://www.heidialmosara.com/botanicalsculpturesinnature",
     "location": [
-      50.9504396057,
-      6.9582915036
+      50.95042380823378,
+      6.958269774913789
     ]
   }
 ]
