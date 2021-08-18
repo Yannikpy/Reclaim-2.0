@@ -5,8 +5,7 @@
 }
 
 @font-face {
-    font-family:  'Lausanne';
-    font-weight: italic;
+    font-family:  'Lausanne Italic';
     src: url("../fonts/Lausanne-300Italic.woff") format("woff"), url("../fonts/Lausanne-300Italic.ttf")  format("truetype"), url('../fonts/Lausanne-300Italic.woff2') format('woff2');
 }
 
@@ -36,10 +35,11 @@ p {
 p3 {
     margin-left: 15px;
     font-size: 1.3em;
-    color: #f3953f !important;
+    color: #96cfc1 !important;
 }
 
 p4 {
+    font-family: 'Lausanne Italic';
     color: black;
     font-size: 1.3em;
     line-height: 1;
@@ -119,17 +119,12 @@ z-index: 200 !important;
     cursor: pointer;
 }
 
-.swiper-container {
-    visibility: hidden;
-}
-
 
 
 
 
 /*Pop up*/
 .my-popup {
-    overflow: hidden;
     position: absolute;
     left: 0;
     right: 0;
@@ -144,27 +139,15 @@ z-index: 200 !important;
 {
     z-index: 3001;
 }
-
-.myContent {
-    margin-bottom: 15px;
-    margin-left: 15px;
-    margin-top: 0px;
-    margin-right: 15px;
-    height: 100%;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    -ms-overflow-style: none;  /* Internet Explorer 10+ */
-    scrollbar-width: none;  /* Firefox */
+.swiper-container {
+    visibility: hidden;
 }
 
-.myContentWithInfo {
-    margin-bottom: 15px;
+.myContent {
     margin-left: 15px;
-    margin-top: 30px;
     margin-right: 15px;
     height: 100%;
     overflow-y: scroll;
-    overflow-x: hidden;
     -ms-overflow-style: none;  /* Internet Explorer 10+ */
     scrollbar-width: none;  /* Firefox */
 }
@@ -176,10 +159,17 @@ z-index: 200 !important;
 
 .image-container {
 overflow: hidden ;
-
+border: 4px solid black;
 margin-top: 15px;
 text-align: center;
 }
+
+.image-container-with-info {
+overflow: hidden ;
+border: 4px solid black;
+margin-top: 45px;
+text-align: center;
+    }
 
 
 .image {
@@ -209,7 +199,9 @@ text-align: center;
     height: 30px;
     background-color: black;
     text-align: center;
+    vertical-align: middle;
     z-index: 4001;
+    
 }
 
 .audioAndXBox{
@@ -378,7 +370,6 @@ font-size: 14px;
         opacity: 1;
         -webkit-filter: blur(0px); /* Safari 6.0 - 9.0 */
         filter: blur(0px);
-        border-bottom: 5px solid black;
         margin: 0;
     }
     
@@ -389,6 +380,7 @@ font-size: 14px;
         height: 30px;
         background-color: black;
         text-align: center;
+        vertical-align: middle;
         z-index: 4001;
     }
     
@@ -414,10 +406,17 @@ font-size: 14px;
         -ms-overflow-style: none;  /* Internet Explorer 10+ */
         scrollbar-width: none;  /* Firefox */
     }
+    .my-content-box::-webkit-scrollbar { 
+        display: none;  /* Safari and Chrome */
+    }
+
+
     .my-content-desktop {
         margin-left: 15px;
         margin-right: 15px;;
     }
+
+
     .audioAndXBox{
         position: absolute;
         top: 15px;
@@ -455,22 +454,22 @@ font-size: 14px;
 
     p {
         color: black;
-        font-size: 15px;
+        font-size: 1.2em;
         line-height: 1;
         word-wrap: break-word !important;
         display: inline-block; 
     }
     
     
+
     p3 {
-        margin-left: 15px;
-        font-size: 15px;
-        color: #f3953f !important;
+        font-size: 1.2em;
+        color: #96cfc1 !important;
     }
     
     p4 {
         color: black;
-        font-size: 1em;
+        font-size: 1.2em;
         line-height: 1;
         word-wrap: break-word !important;
         display: inline-block;

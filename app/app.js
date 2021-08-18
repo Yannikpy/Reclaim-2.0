@@ -18,8 +18,13 @@ const map = L.map('map',{
 ScrollWheelZoom: true,
 attributionControl: false,
 zoomControl: false
-}).setView([50.9385 - offsetx*2, 6.935 - offsety*2], 14);
-
+})
+if (isMobile) {
+	map.setView([50.9385 + 0.01, 6.935 - 0.017], 16.2);
+}
+else {
+	map.setView([50.9385 + 0.01, 6.935 -0.005], 14);
+}
 // add tileLayer for blue Color
 const mypane = map.createPane('color');
 L.tileLayer('https://htmlcolors.com/color-image/96cfc1.png',{
@@ -195,7 +200,7 @@ function createContent(order, id, artist, title, text, info, insta, website, isM
 	content = content.replace("_text_",text)
 	if (insta != ""){
 		content = content.replace("_insta_",insta)
-		content = content.replace("_insta_display","block")
+		content = content.replace("_insta_display","inline")
 	}
 	else {
 		content = content.replace("_insta_display","none")
@@ -203,7 +208,7 @@ function createContent(order, id, artist, title, text, info, insta, website, isM
 
 	if (website != ""){
 		content = content.replace("_website_",website)
-		content = content.replace("_website_display","block")
+		content = content.replace("_website_display","inline")
 	}
 	else {
 		content = content.replace("_website_display","none")
@@ -212,7 +217,7 @@ function createContent(order, id, artist, title, text, info, insta, website, isM
 	if (info != ""){
 		content = content.replace("none", "block")
 		content = content.replace("_info_",info)
-		content = content.replace("myContent","myContentWithInfo")
+		content = content.replace("image-container","image-container-with-info")
 		content = content.replace("audioAndXBox","audioAndXBoxWithInfo")
 	}
 	
@@ -257,12 +262,12 @@ function initMarkers(lang) {
 		else {
 			// these are points
 			var marker = L.marker(loc.location, {icon: pointIcon}).addTo(map)
-			marker.id = i;
+			marker.id = loc.id;
+			marker.n = i;
 			marker.type = "art"
 			marker.on('click', openmyPopup)
 			markers.addLayer(marker)
 			route.push(marker);
-			console.log(loc.insta, loc.website)
 			if (lang=="de"){
 				var content = createContent(loc.order, loc.id, loc.artist, loc.title, loc.text_de, loc.info_de, loc.insta, loc.website, isMobile)
 			}
@@ -325,6 +330,11 @@ function initMarkers(lang) {
 			imageContainer.style.width = imgWidth + "px";
 			imageContainer.style.height = imgHeight + "px";
 		}
+		var imageContainers = document.querySelectorAll(".image-container-with-info")
+		for (imageContainer of imageContainers) {
+			imageContainer.style.width = imgWidth + "px";
+			imageContainer.style.height = imgHeight + "px";
+		}
 	}
 	else {
 		var imgHeight = document.querySelector(".image").style.height
@@ -360,7 +370,7 @@ function playGuide(){
 function openmyPopup(e){
 		document.getElementById('swiper-container').style.visibility = "visible";
 		//console.log("click: " +  e.sourceTarget.id)
-		swiper.slideTo(e.sourceTarget.id + 1, 0, false)
+		swiper.slideTo(e.sourceTarget.n + 1, 0, false)
 }
 
 function closemyPopup(){
@@ -404,7 +414,7 @@ const swiper = new Swiper('.swiper-container', {
 
 
 swiper.on('slideChange', function () {
-		//console.log("prev:" + n)
+		console.log("prev:" + n)
 
 		
 		if (document.getElementById('swiper-container').style.visibility == "visible") {
@@ -429,10 +439,7 @@ swiper.on('slideChange', function () {
 			audioPlaying = false;
 			lang = document.getElementById('langBtn').innerHTML
 	
-			audio = new Audio('audio/'+((lang=="de") ? 'english/': 'german/' )+ 3  +'.mp3');
-			
-			//slide = document.querySelector('.swiper-slide-active')
-			//slide.querySelector('.image').style.transition = "2s";
+			audio = new Audio('audio/'+((lang=="de") ? 'english/': 'german/' ) + marker.id +'.mp3');
 		}			
   });
 
